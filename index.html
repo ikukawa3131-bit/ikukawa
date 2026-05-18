@@ -931,19 +931,180 @@
 
 </main>
 
+<!-- ── 課程詳細燈箱 ── -->
+<div id="course-modal" style="display:none; position:fixed; inset:0; z-index:999; background:rgba(74,64,58,0.55); backdrop-filter:blur(6px); overflow-y:auto; padding:20px;">
+  <div style="max-width:560px; margin:0 auto; background:#FDFBF7; border-radius:20px; overflow:hidden; box-shadow:0 20px 60px rgba(74,64,58,0.25);">
+    <!-- 關閉按鈕 -->
+    <div style="display:flex; justify-content:flex-end; padding:16px 16px 0;">
+      <button onclick="closeModal()" style="background:var(--primary); border:none; border-radius:50%; width:36px; height:36px; cursor:pointer; display:flex; align-items:center; justify-content:center;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#4A403A" stroke-width="2" stroke-linecap="round" style="width:18px;height:18px;"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <!-- 課程圖片 -->
+    <div id="modal-img-wrap" style="width:100%; aspect-ratio:4/3; overflow:hidden;">
+      <img id="modal-img" src="" alt="" style="width:100%; height:100%; object-fit:cover;">
+    </div>
+    <!-- 課程內容 -->
+    <div style="padding:24px;">
+      <div style="display:flex; align-items:center; gap:10px; margin-bottom:6px;">
+        <span id="modal-badge" style="background:var(--primary); color:var(--text); border-radius:20px; padding:3px 12px; font-size:12px;">特價</span>
+      </div>
+      <h3 id="modal-title" style="font-family:'Noto Serif TC',serif; font-size:22px; font-weight:600; color:#4A403A; margin-bottom:12px;"></h3>
+      <!-- 時間/價格 -->
+      <div style="display:flex; gap:16px; margin-bottom:16px; flex-wrap:wrap;">
+        <div style="display:flex; align-items:center; gap:6px; font-size:13px; color:#7A6A62;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" style="width:15px;height:15px;"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <span id="modal-time"></span>
+        </div>
+        <div style="display:flex; align-items:baseline; gap:8px;">
+          <span id="modal-orig" style="font-size:13px; color:#A89890; text-decoration:line-through;"></span>
+          <span id="modal-price" style="font-size:22px; font-weight:600; color:#B89A8A; font-family:'Noto Serif TC',serif;"></span>
+        </div>
+      </div>
+      <!-- 分隔線 -->
+      <div style="height:1px; background:linear-gradient(to right, transparent, #D6C0B3, transparent); margin-bottom:16px;"></div>
+      <!-- 課程說明 -->
+      <div style="font-size:14px; color:#7A6A62; line-height:1.9; margin-bottom:20px;">
+        <p id="modal-desc"></p>
+      </div>
+      <!-- 影片區塊 -->
+      <div id="modal-video-wrap" style="display:none; margin-bottom:20px;">
+        <div style="font-family:'Noto Serif TC',serif; font-size:15px; font-weight:600; color:#4A403A; margin-bottom:10px; display:flex; align-items:center; gap:8px;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" style="width:16px;height:16px;color:#B89A8A;"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+          課程影片
+        </div>
+        <div style="border-radius:12px; overflow:hidden; aspect-ratio:16/9; background:#EDE5DF;">
+          <iframe id="modal-video" src="" allowfullscreen style="width:100%; height:100%; border:none;"></iframe>
+        </div>
+        <p style="font-size:12px; color:#A89890; margin-top:8px; text-align:center;">觀看課程示範影片，了解製作流程</p>
+      </div>
+      <!-- 注意事項 -->
+      <div style="background:#FAF7F4; border-radius:12px; padding:14px 16px; border:1px solid rgba(214,192,179,0.35); margin-bottom:16px;">
+        <div style="font-size:13px; font-weight:500; color:#4A403A; margin-bottom:8px;">課程注意事項</div>
+        <ul style="list-style:none; padding:0; margin:0; font-size:13px; color:#7A6A62; display:flex; flex-direction:column; gap:6px;">
+          <li style="display:flex; gap:8px;"><span style="color:#B89A8A;">•</span>材料費已包含在課程價格內</li>
+          <li style="display:flex; gap:8px;"><span style="color:#B89A8A;">•</span>完成作品可直接帶回家</li>
+          <li style="display:flex; gap:8px;"><span style="color:#B89A8A;">•</span>全程老師引導，無需木工基礎</li>
+          <li style="display:flex; gap:8px;"><span style="color:#B89A8A;">•</span>請於上課前 2 天透過 LINE@ 完成預約</li>
+        </ul>
+      </div>
+      <!-- 預約按鈕 -->
+      <a href="https://line.me/R/ti/p/@496plres" target="_blank" rel="noopener" style="display:flex; align-items:center; justify-content:center; gap:8px; background:#06C755; color:white; border-radius:14px; padding:14px; font-size:15px; font-weight:500; text-decoration:none;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" style="width:18px;height:18px;"><path d="M21 11.5C21 7.36 16.97 4 12 4S3 7.36 3 11.5c0 3.73 3.3 6.86 7.76 7.45.3.07.72.2.82.47.09.24.06.61.03.85l-.13.8c-.04.24-.18.95.83.52 1.02-.43 5.46-3.22 7.45-5.51 1.37-1.51 2.24-3.23 2.24-5.08z"/></svg>
+        立即透過 LINE@ 預約
+      </a>
+    </div>
+  </div>
+</div>
+
 <footer>
   <div class="footer-brand">一久川木藝生活館</div>
+  <div style="display:flex; align-items:center; justify-content:center; gap:6px; font-size:13px; color:#A89890; margin-bottom:6px;">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" style="width:14px;height:14px;"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+    累計瀏覽 <strong id="visit-count" style="color:#7A6A62;">---</strong> 次
+  </div>
   <div>© 2025 一久川木藝生活館 · 保留所有權利</div>
   <div style="margin-top:6px">傳承職人精神 · 守護木藝溫度</div>
 </footer>
 
 <script>
-  // FAQ toggle
+  // ── 課程資料 ──
+  const courses = {
+    '手作井字隔熱墊': {
+      img: 'https://drive.google.com/thumbnail?id=1tWKnBOQ3P_Ik_TGzKXWXANfTNsFZLL3K&sz=w800',
+      time: '約 1.5 小時',
+      orig: 'NT$ 499',
+      price: 'NT$ 399',
+      desc: '透過手工榫接技法，將木條交錯拼接成獨特的井字造型隔熱墊。每一條木料都經過精心挑選，紋路自然溫潤，製作過程簡單有趣，非常適合初次體驗木工的朋友。完成後可直接用於生活中，兼具實用與美感。',
+      video: '' // 可填入 YouTube 嵌入網址，例如：https://www.youtube.com/embed/xxxxxxx
+    },
+    '流痕刮痧板手做': {
+      img: 'https://drive.google.com/thumbnail?id=1Ao88gprlJhQ8LLC856PqerZ3Ap09OzaY&sz=w800',
+      time: '約 1.5 小時',
+      orig: 'NT$ 599',
+      price: 'NT$ 499',
+      desc: '使用天然木材，親手打磨出帶有流木紋理的刮痧板。課程中將學習木料的基本打磨技巧，從粗砂到細砂，感受木材質地的變化。完成後塗上天然油脂保護，打造出獨一無二、貼合手感的個人專屬刮痧板。',
+      video: ''
+    },
+    '清箸檜香手作': {
+      img: 'https://drive.google.com/thumbnail?id=1YAoKLqe_4Q2VqRFMtWKj0z3Jaw0tOVrF&sz=w800',
+      time: '約 1–2 小時',
+      orig: 'NT$ 699',
+      price: 'NT$ 599',
+      desc: '以珍貴的台灣檜木為材料，親手製作一雙專屬筷子。在製作過程中，檜木的天然香氣令人身心舒暢。課程涵蓋切削、打磨、拋光等完整工序，讓您深刻體驗傳統木工的樂趣，帶回一份充滿溫度的手作禮物。',
+      video: ''
+    }
+  };
+
+  // ── 燈箱開關 ──
+  function openModal(name) {
+    const c = courses[name];
+    if (!c) return;
+    document.getElementById('modal-img').src = c.img;
+    document.getElementById('modal-img').alt = name;
+    document.getElementById('modal-title').textContent = name;
+    document.getElementById('modal-time').textContent = c.time;
+    document.getElementById('modal-orig').textContent = c.orig;
+    document.getElementById('modal-price').textContent = c.price;
+    document.getElementById('modal-desc').textContent = c.desc;
+    // 影片
+    const vWrap = document.getElementById('modal-video-wrap');
+    const vFrame = document.getElementById('modal-video');
+    if (c.video) {
+      vFrame.src = c.video;
+      vWrap.style.display = 'block';
+    } else {
+      vFrame.src = '';
+      vWrap.style.display = 'none';
+    }
+    document.getElementById('course-modal').style.display = 'block';
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    document.getElementById('course-modal').style.display = 'none';
+    document.getElementById('modal-video').src = '';
+    document.body.style.overflow = '';
+  }
+
+  // 點背景關閉
+  document.getElementById('course-modal').addEventListener('click', function(e) {
+    if (e.target === this) closeModal();
+  });
+
+  // ESC 關閉
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+  // ── 課程卡片點擊 ──
+  document.querySelectorAll('.price-card').forEach(card => {
+    card.style.cursor = 'pointer';
+    card.addEventListener('click', () => {
+      const name = card.querySelector('.price-card-name').textContent.trim();
+      openModal(name);
+    });
+  });
+
+  // ── 瀏覽次數 ──
+  async function updateVisitCount() {
+    try {
+      const key = 'ikukawa_visits';
+      let result = await window.storage.get(key, true);
+      let count = result ? parseInt(result.value) || 0 : 0;
+      count++;
+      await window.storage.set(key, String(count), true);
+      document.getElementById('visit-count').textContent = count.toLocaleString();
+    } catch(e) {
+      document.getElementById('visit-count').textContent = '---';
+    }
+  }
+  updateVisitCount();
+
+  // ── FAQ toggle ──
   function toggleFaq(el) {
     el.classList.toggle('open');
   }
 
-  // Scroll-based nav highlight
+  // ── Scroll-based nav highlight ──
   const sections = ['about','pricing','notice','faq','contact'];
   const tabs = document.querySelectorAll('.nav-tab');
 
@@ -960,14 +1121,13 @@
 
   window.addEventListener('scroll', updateTab, { passive: true });
 
-  // Scroll-into-view smooth for tabs
   tabs.forEach(tab => {
     tab.addEventListener('click', () => {
       tab.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
     });
   });
 
-  // Fade-in observer
+  // ── Fade-in observer ──
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => {
       if (e.isIntersecting) {
