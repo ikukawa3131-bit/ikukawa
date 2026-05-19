@@ -826,37 +826,68 @@
       DIY Course Pricing
     </div>
 
-    <div style="display:flex; flex-direction:column; gap:10px; margin-bottom:20px;">
-      <div style="display:flex; justify-content:space-between; align-items:center; padding:12px 16px; background:#FAF7F4; border-radius:12px; border:1px solid var(--border);">
-        <div>
-          <div style="font-size:14px; font-weight:500; color:var(--text);">Wooden Coaster (井字隔熱墊)</div>
-          <div style="font-size:12px; color:var(--text-light);">~1.5 hrs · All materials included</div>
+    <div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(240px, 1fr)); gap:16px; margin-bottom:20px;">
+
+      <!-- Card 1 -->
+      <div class="price-card" onclick="openModal('手作井字隔熱墊')" style="cursor:pointer;">
+        <div class="price-card-img">
+          <img src="https://drive.google.com/thumbnail?id=1tWKnBOQ3P_Ik_TGzKXWXANfTNsFZLL3K&sz=w600" alt="Wooden Coaster" loading="lazy" onerror="this.parentElement.style.background='#EDE5DF';this.style.display='none'">
         </div>
-        <div style="text-align:right;">
-          <div style="font-size:12px; color:var(--text-lighter); text-decoration:line-through;">NT$ 499</div>
-          <div style="font-size:18px; font-weight:600; color:var(--accent); font-family:'Noto Serif TC',serif;">NT$ 399</div>
-        </div>
-      </div>
-      <div style="display:flex; justify-content:space-between; align-items:center; padding:12px 16px; background:#FAF7F4; border-radius:12px; border:1px solid var(--border);">
-        <div>
-          <div style="font-size:14px; font-weight:500; color:var(--text);">Gua Sha Board (流痕刮痧板)</div>
-          <div style="font-size:12px; color:var(--text-light);">~1.5 hrs · All materials included</div>
-        </div>
-        <div style="text-align:right;">
-          <div style="font-size:12px; color:var(--text-lighter); text-decoration:line-through;">NT$ 599</div>
-          <div style="font-size:18px; font-weight:600; color:var(--accent); font-family:'Noto Serif TC',serif;">NT$ 499</div>
-        </div>
-      </div>
-      <div style="display:flex; justify-content:space-between; align-items:center; padding:12px 16px; background:#FAF7F4; border-radius:12px; border:1px solid var(--border);">
-        <div>
-          <div style="font-size:14px; font-weight:500; color:var(--text);">Hinoki Chopsticks (清箸檜香)</div>
-          <div style="font-size:12px; color:var(--text-light);">~1–2 hrs · All materials included</div>
-        </div>
-        <div style="text-align:right;">
-          <div style="font-size:12px; color:var(--text-lighter); text-decoration:line-through;">NT$ 699</div>
-          <div style="font-size:18px; font-weight:600; color:var(--accent); font-family:'Noto Serif TC',serif;">NT$ 599</div>
+        <div class="price-card-body">
+          <div class="price-card-name">Wooden Coaster</div>
+          <div style="font-size:11px; color:var(--text-lighter); margin-bottom:6px;">井字隔熱墊</div>
+          <div class="price-card-meta">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" style="width:13px;height:13px;"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            ~1.5 hrs · All materials included
+          </div>
+          <div class="price-row">
+            <span class="price-original">NT$ 499</span>
+            <span class="price-sale">NT$ 399</span>
+            <span class="sale-badge">Sale</span>
+          </div>
         </div>
       </div>
+
+      <!-- Card 2 -->
+      <div class="price-card" onclick="openModal('流痕刮痧板手做')" style="cursor:pointer;">
+        <div class="price-card-img">
+          <img src="https://drive.google.com/thumbnail?id=1Ao88gprlJhQ8LLC856PqerZ3Ap09OzaY&sz=w600" alt="Gua Sha Board" loading="lazy" onerror="this.parentElement.style.background='#EDE5DF';this.style.display='none'">
+        </div>
+        <div class="price-card-body">
+          <div class="price-card-name">Gua Sha Board</div>
+          <div style="font-size:11px; color:var(--text-lighter); margin-bottom:6px;">流痕刮痧板</div>
+          <div class="price-card-meta">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" style="width:13px;height:13px;"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            ~1.5 hrs · All materials included
+          </div>
+          <div class="price-row">
+            <span class="price-original">NT$ 599</span>
+            <span class="price-sale">NT$ 499</span>
+            <span class="sale-badge">Sale</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="price-card" onclick="openModal('清箸檜香手作')" style="cursor:pointer;">
+        <div class="price-card-img">
+          <img src="https://drive.google.com/thumbnail?id=1YAoKLqe_4Q2VqRFMtWKj0z3Jaw0tOVrF&sz=w600" alt="Hinoki Chopsticks" loading="lazy" onerror="this.parentElement.style.background='#EDE5DF';this.style.display='none'">
+        </div>
+        <div class="price-card-body">
+          <div class="price-card-name">Hinoki Chopsticks</div>
+          <div style="font-size:11px; color:var(--text-lighter); margin-bottom:6px;">清箸檜香手作</div>
+          <div class="price-card-meta">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" style="width:13px;height:13px;"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            ~1–2 hrs · All materials included
+          </div>
+          <div class="price-row">
+            <span class="price-original">NT$ 699</span>
+            <span class="price-sale">NT$ 599</span>
+            <span class="sale-badge">Sale</span>
+          </div>
+        </div>
+      </div>
+
     </div>
 
     <div class="divider"></div>
@@ -1103,9 +1134,12 @@
     <!-- 課程內容 -->
     <div style="padding:24px;">
       <div style="display:flex; align-items:center; gap:10px; margin-bottom:6px;">
-        <span id="modal-badge" style="background:var(--primary); color:var(--text); border-radius:20px; padding:3px 12px; font-size:12px;">特價</span>
+        <span id="modal-badge" style="background:var(--primary); color:var(--text); border-radius:20px; padding:3px 12px; font-size:12px;">
+          <span class="zh-only">特價</span><span class="en-only">Sale</span>
+        </span>
       </div>
-      <h3 id="modal-title" style="font-family:'Noto Serif TC',serif; font-size:22px; font-weight:600; color:#4A403A; margin-bottom:12px;"></h3>
+      <h3 id="modal-title" style="font-family:'Noto Serif TC',serif; font-size:22px; font-weight:600; color:#4A403A; margin-bottom:4px;"></h3>
+      <div id="modal-title-en" style="font-size:13px; color:#A89890; margin-bottom:12px;"></div>
       <!-- 時間/價格 -->
       <div style="display:flex; gap:16px; margin-bottom:16px; flex-wrap:wrap;">
         <div style="display:flex; align-items:center; gap:6px; font-size:13px; color:#7A6A62;">
@@ -1127,27 +1161,46 @@
       <div id="modal-video-wrap" style="display:none; margin-bottom:20px;">
         <div style="font-family:'Noto Serif TC',serif; font-size:15px; font-weight:600; color:#4A403A; margin-bottom:10px; display:flex; align-items:center; gap:8px;">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" style="width:16px;height:16px;color:#B89A8A;"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
-          課程影片
+          <span class="zh-only">課程影片</span><span class="en-only">Course Video</span>
         </div>
         <div style="border-radius:12px; overflow:hidden; aspect-ratio:16/9; background:#EDE5DF;">
           <iframe id="modal-video" src="" allowfullscreen style="width:100%; height:100%; border:none;"></iframe>
         </div>
-        <p style="font-size:12px; color:#A89890; margin-top:8px; text-align:center;">觀看課程示範影片，了解製作流程</p>
+        <p style="font-size:12px; color:#A89890; margin-top:8px; text-align:center;">
+          <span class="zh-only">觀看課程示範影片，了解製作流程</span>
+          <span class="en-only">Watch the course demo video to learn the process</span>
+        </p>
       </div>
       <!-- 注意事項 -->
       <div style="background:#FAF7F4; border-radius:12px; padding:14px 16px; border:1px solid rgba(214,192,179,0.35); margin-bottom:16px;">
-        <div style="font-size:13px; font-weight:500; color:#4A403A; margin-bottom:8px;">課程注意事項</div>
+        <div style="font-size:13px; font-weight:500; color:#4A403A; margin-bottom:8px;">
+          <span class="zh-only">課程注意事項</span>
+          <span class="en-only">Important Notes</span>
+        </div>
         <ul style="list-style:none; padding:0; margin:0; font-size:13px; color:#7A6A62; display:flex; flex-direction:column; gap:6px;">
-          <li style="display:flex; gap:8px;"><span style="color:#B89A8A;">•</span>材料費已包含在課程價格內</li>
-          <li style="display:flex; gap:8px;"><span style="color:#B89A8A;">•</span>完成作品可直接帶回家</li>
-          <li style="display:flex; gap:8px;"><span style="color:#B89A8A;">•</span>全程老師引導，無需木工基礎</li>
-          <li style="display:flex; gap:8px;"><span style="color:#B89A8A;">•</span>請於上課前 2 天透過 LINE@ 完成預約</li>
+          <li style="display:flex; gap:8px;"><span style="color:#B89A8A;">•</span>
+            <span class="zh-only">材料費已包含在課程價格內</span>
+            <span class="en-only">All materials are included in the price</span>
+          </li>
+          <li style="display:flex; gap:8px;"><span style="color:#B89A8A;">•</span>
+            <span class="zh-only">完成作品可直接帶回家</span>
+            <span class="en-only">Take your finished piece home</span>
+          </li>
+          <li style="display:flex; gap:8px;"><span style="color:#B89A8A;">•</span>
+            <span class="zh-only">全程老師引導，無需木工基礎</span>
+            <span class="en-only">Instructor-guided, no experience needed</span>
+          </li>
+          <li style="display:flex; gap:8px;"><span style="color:#B89A8A;">•</span>
+            <span class="zh-only">請於上課前 2 天透過 LINE@ 完成預約</span>
+            <span class="en-only">Book via LINE@ at least 2 days before class</span>
+          </li>
         </ul>
       </div>
       <!-- 預約按鈕 -->
       <a href="https://line.me/R/ti/p/@496plres" target="_blank" rel="noopener" style="display:flex; align-items:center; justify-content:center; gap:8px; background:#06C755; color:white; border-radius:14px; padding:14px; font-size:15px; font-weight:500; text-decoration:none;">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" style="width:18px;height:18px;"><path d="M21 11.5C21 7.36 16.97 4 12 4S3 7.36 3 11.5c0 3.73 3.3 6.86 7.76 7.45.3.07.72.2.82.47.09.24.06.61.03.85l-.13.8c-.04.24-.18.95.83.52 1.02-.43 5.46-3.22 7.45-5.51 1.37-1.51 2.24-3.23 2.24-5.08z"/></svg>
-        立即透過 LINE@ 預約
+        <span class="zh-only">立即透過 LINE@ 預約</span>
+        <span class="en-only">Book Now via LINE@</span>
       </a>
     </div>
   </div>
@@ -1169,26 +1222,32 @@
   const courses = {
     '手作井字隔熱墊': {
       img: 'https://drive.google.com/thumbnail?id=1tWKnBOQ3P_Ik_TGzKXWXANfTNsFZLL3K&sz=w800',
-      time: '約 1.5 小時',
+      nameEn: 'Wooden Coaster',
+      time: '約 1.5 小時 · ~1.5 hrs',
       orig: 'NT$ 499',
       price: 'NT$ 399',
       desc: '透過手工榫接技法，將木條交錯拼接成獨特的井字造型隔熱墊。每一條木料都經過精心挑選，紋路自然溫潤，製作過程簡單有趣，非常適合初次體驗木工的朋友。完成後可直接用於生活中，兼具實用與美感。',
-      video: '' // 可填入 YouTube 嵌入網址，例如：https://www.youtube.com/embed/xxxxxxx
+      descEn: 'Using traditional joinery techniques, interlace wooden strips into a unique grid-pattern coaster. Each piece of wood is carefully selected for its natural grain. Simple and fun to make — perfect for first-time woodworkers. Take it home and use it every day!',
+      video: ''
     },
     '流痕刮痧板手做': {
       img: 'https://drive.google.com/thumbnail?id=1Ao88gprlJhQ8LLC856PqerZ3Ap09OzaY&sz=w800',
-      time: '約 1.5 小時',
+      nameEn: 'Gua Sha Board',
+      time: '約 1.5 小時 · ~1.5 hrs',
       orig: 'NT$ 599',
       price: 'NT$ 499',
       desc: '使用天然木材，親手打磨出帶有流木紋理的刮痧板。課程中將學習木料的基本打磨技巧，從粗砂到細砂，感受木材質地的變化。完成後塗上天然油脂保護，打造出獨一無二、貼合手感的個人專屬刮痧板。',
+      descEn: 'Sand and shape a natural wood gua sha board with beautiful flowing grain. Learn basic sanding techniques — from coarse to fine — and feel the transformation of the wood. Finished with natural oil, creating a unique, ergonomic wellness tool that is yours alone.',
       video: ''
     },
     '清箸檜香手作': {
       img: 'https://drive.google.com/thumbnail?id=1YAoKLqe_4Q2VqRFMtWKj0z3Jaw0tOVrF&sz=w800',
-      time: '約 1–2 小時',
+      nameEn: 'Hinoki Chopsticks',
+      time: '約 1–2 小時 · ~1–2 hrs',
       orig: 'NT$ 699',
       price: 'NT$ 599',
       desc: '以珍貴的台灣檜木為材料，親手製作一雙專屬筷子。在製作過程中，檜木的天然香氣令人身心舒暢。課程涵蓋切削、打磨、拋光等完整工序，讓您深刻體驗傳統木工的樂趣，帶回一份充滿溫度的手作禮物。',
+      descEn: 'Craft your own pair of chopsticks from precious Taiwan Hinoki cypress. The natural forest fragrance fills the air as you carve, sand, and polish. Experience the full process of traditional woodworking — a deeply personal and aromatic keepsake to bring home.',
       video: ''
     }
   };
@@ -1197,13 +1256,15 @@
   function openModal(name) {
     const c = courses[name];
     if (!c) return;
+    const isEn = document.body.classList.contains('lang-en');
     document.getElementById('modal-img').src = c.img;
-    document.getElementById('modal-img').alt = name;
-    document.getElementById('modal-title').textContent = name;
+    document.getElementById('modal-img').alt = isEn ? c.nameEn : name;
+    document.getElementById('modal-title').textContent = isEn ? c.nameEn : name;
+    document.getElementById('modal-title-en').textContent = isEn ? name : c.nameEn;
     document.getElementById('modal-time').textContent = c.time;
     document.getElementById('modal-orig').textContent = c.orig;
     document.getElementById('modal-price').textContent = c.price;
-    document.getElementById('modal-desc').textContent = c.desc;
+    document.getElementById('modal-desc').textContent = isEn ? c.descEn : c.desc;
     // 影片
     const vWrap = document.getElementById('modal-video-wrap');
     const vFrame = document.getElementById('modal-video');
