@@ -564,6 +564,30 @@
 
   .contact-info svg { width: 16px; height: 16px; flex-shrink: 0; margin-top: 2px; color: var(--accent); }
 
+  /* ── LANG TOGGLE ── */
+  .lang-btn {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 500;
+    border: 1.5px solid var(--border);
+    background: transparent;
+    color: var(--text);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+  }
+  .lang-btn:hover { background: var(--primary); border-color: var(--primary); }
+  .lang-btn svg { width: 13px; height: 13px; }
+  body.lang-en .zh-only { display: none !important; }
+  body.lang-en .en-only { display: block !important; }
+  body:not(.lang-en) .en-only { display: none !important; }
+  body:not(.lang-en) .zh-only { display: block !important; }
+
   /* ── FOOTER ── */
   footer {
     text-align: center;
@@ -649,11 +673,15 @@
         聯絡我們
       </a>
     </div>
+    <button class="lang-btn" onclick="toggleLang()" id="lang-btn">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 014-10z"/></svg>
+      EN
+    </button>
   </nav>
 </header>
 
 <!-- HERO -->
-<div class="hero fade-in">
+<div class="hero fade-in zh-only">
   <div class="hero-eyebrow">深耕在地 · 二十年職人精神</div>
   <h1>一久川木藝生活館</h1>
   <p class="hero-sub">從彫刻藝品到木藝生活，<br>每一塊木頭都有它獨特的生命故事。</p>
@@ -663,7 +691,18 @@
   </span>
 </div>
 
-<main>
+<!-- HERO EN -->
+<div class="hero fade-in en-only">
+  <div class="hero-eyebrow">20+ Years of Woodcraft Tradition · Sanyi, Taiwan</div>
+  <h1 style="font-size:clamp(24px,5vw,38px);">Ikukawa Wood Art Studio</h1>
+  <p class="hero-sub">From traditional carving to modern wood living,<br>every piece of wood holds a unique story.</p>
+  <span class="hero-badge">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+    DIY Workshops · Reservations Open Now
+  </span>
+</div>
+
+<main class="zh-only">
 
   <!-- ABOUT -->
   <section id="about" class="card fade-in">
@@ -726,11 +765,120 @@
     </div>
 
     <div class="about-text">
-    <div class="about-text">
       <p>我們深信，每一塊木頭都有其獨特的生命故事。透過親手製作的體驗與分享，我們希望傳達一個重要訊息：隨著天然資源（木材）的減少，我們正積極探索如何將可能被廢棄的材料「重新利用」，賦予它們第二次生命，轉化為獨特的創作素材。</p>
       <p>我們也關注到傳統工藝的傳承危機：隨著老師傅們的年邁與凋零，<strong>手工雕刻刀具的製作師傅在臺灣已寥寥無幾</strong>。一久川木藝生活館將持續以多元形式推廣木雕藝術，邀請您與我們一同，守護這份溫潤的記憶與珍貴的職人精神。</p>
     </div>
+  </section>
+
+  <!-- ENGLISH INTRO -->
+  <section id="english" class="card fade-in en-only" style="display:none;">
+    <div class="section-label">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+      <h2>English Introduction</h2>
+      <span class="tag">For International Visitors</span>
     </div>
+
+    <div style="background:#FAF7F4; border-radius:14px; padding:22px; border:1px solid var(--border); margin-bottom:20px;">
+      <div style="font-family:'Noto Serif TC',serif; font-size:17px; font-weight:600; color:var(--text); margin-bottom:10px;">Welcome to Ikukawa Wood Art Studio</div>
+      <p style="font-size:14px; color:var(--text-light); line-height:1.9; margin-bottom:12px;">
+        Located in <strong style="color:var(--text);">Sanyi, Miaoli</strong> — Taiwan's most famous woodcraft town — Ikukawa Wood Art Studio has been preserving traditional woodcarving craftsmanship for over <strong style="color:var(--text);">20 years</strong>.
+      </p>
+      <p style="font-size:14px; color:var(--text-light); line-height:1.9;">
+        We offer hands-on <strong style="color:var(--text);">DIY woodcraft experiences</strong> suitable for all skill levels. No experience needed — our instructors guide you through every step. All materials are included. Take home a unique handmade piece created by you!
+      </p>
+    </div>
+
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:20px;">
+      <div class="item-pill">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <div class="item-pill-content">
+          <div class="item-pill-title">Hinoki Essential Oil</div>
+          <div class="item-pill-desc">Pure & natural, aromatic therapy</div>
+        </div>
+      </div>
+      <div class="item-pill">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+        <div class="item-pill-content">
+          <div class="item-pill-title">Unique Wood Furniture</div>
+          <div class="item-pill-desc">One-of-a-kind craftsmanship</div>
+        </div>
+      </div>
+      <div class="item-pill">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+        <div class="item-pill-content">
+          <div class="item-pill-title">DIY Workshops</div>
+          <div class="item-pill-desc">Coaster · Gua sha board · Chopsticks</div>
+        </div>
+      </div>
+      <div class="item-pill">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+        <div class="item-pill-content">
+          <div class="item-pill-title">Custom Woodcarving</div>
+          <div class="item-pill-desc">Bespoke orders & repair service</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div style="font-family:'Noto Serif TC',serif; font-size:15px; font-weight:600; color:var(--text); margin-bottom:12px; display:flex; align-items:center; gap:8px;">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;color:var(--accent);"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      DIY Course Pricing
+    </div>
+
+    <div style="display:flex; flex-direction:column; gap:10px; margin-bottom:20px;">
+      <div style="display:flex; justify-content:space-between; align-items:center; padding:12px 16px; background:#FAF7F4; border-radius:12px; border:1px solid var(--border);">
+        <div>
+          <div style="font-size:14px; font-weight:500; color:var(--text);">Wooden Coaster (井字隔熱墊)</div>
+          <div style="font-size:12px; color:var(--text-light);">~1.5 hrs · All materials included</div>
+        </div>
+        <div style="text-align:right;">
+          <div style="font-size:12px; color:var(--text-lighter); text-decoration:line-through;">NT$ 499</div>
+          <div style="font-size:18px; font-weight:600; color:var(--accent); font-family:'Noto Serif TC',serif;">NT$ 399</div>
+        </div>
+      </div>
+      <div style="display:flex; justify-content:space-between; align-items:center; padding:12px 16px; background:#FAF7F4; border-radius:12px; border:1px solid var(--border);">
+        <div>
+          <div style="font-size:14px; font-weight:500; color:var(--text);">Gua Sha Board (流痕刮痧板)</div>
+          <div style="font-size:12px; color:var(--text-light);">~1.5 hrs · All materials included</div>
+        </div>
+        <div style="text-align:right;">
+          <div style="font-size:12px; color:var(--text-lighter); text-decoration:line-through;">NT$ 599</div>
+          <div style="font-size:18px; font-weight:600; color:var(--accent); font-family:'Noto Serif TC',serif;">NT$ 499</div>
+        </div>
+      </div>
+      <div style="display:flex; justify-content:space-between; align-items:center; padding:12px 16px; background:#FAF7F4; border-radius:12px; border:1px solid var(--border);">
+        <div>
+          <div style="font-size:14px; font-weight:500; color:var(--text);">Hinoki Chopsticks (清箸檜香)</div>
+          <div style="font-size:12px; color:var(--text-light);">~1–2 hrs · All materials included</div>
+        </div>
+        <div style="text-align:right;">
+          <div style="font-size:12px; color:var(--text-lighter); text-decoration:line-through;">NT$ 699</div>
+          <div style="font-size:18px; font-weight:600; color:var(--accent); font-family:'Noto Serif TC',serif;">NT$ 599</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div style="font-family:'Noto Serif TC',serif; font-size:15px; font-weight:600; color:var(--text); margin-bottom:12px; display:flex; align-items:center; gap:8px;">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;color:var(--accent);"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      How to Book
+    </div>
+
+    <div style="background:#FAF7F4; border-radius:12px; padding:16px; border:1px solid var(--border); font-size:13.5px; color:var(--text-light); line-height:2;">
+      <div>📍 <strong style="color:var(--text);">Address：</strong>No.50-4, Bagu Rd., Guangsheng Village, Sanyi Township, Miaoli County, Taiwan</div>
+      <div>📱 <strong style="color:var(--text);">LINE@：</strong>@496plres</div>
+      <div>📸 <strong style="color:var(--text);">Instagram：</strong>@ikukawa313131</div>
+      <div style="margin-top:10px; padding-top:10px; border-top:1px solid var(--border); font-size:12.5px;">
+        ⚠ Reservations required. Small groups (3–5 people): book 2 days in advance. Large groups (6–30): book 3 weeks in advance.
+      </div>
+    </div>
+
+    <a href="https://maps.app.goo.gl/Gp36gKRSRYtCaxYG8" target="_blank" rel="noopener" style="display:flex; align-items:center; justify-content:center; gap:8px; margin-top:14px; padding:14px; background:var(--primary); color:var(--text); border-radius:14px; font-size:14px; font-weight:500; text-decoration:none; transition:all 0.2s;">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
+      Get Directions on Google Maps
+    </a>
   </section>
 
   <!-- PRICING -->
@@ -1093,6 +1241,21 @@
     });
   });
 
+  // ── 語言切換 ──
+  function toggleLang() {
+    const isEn = document.body.classList.toggle('lang-en');
+    const btn = document.getElementById('lang-btn');
+    if (isEn) {
+      btn.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg> 中文`;
+      document.documentElement.lang = 'en';
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      btn.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 014-10z"/></svg> EN`;
+      document.documentElement.lang = 'zh-TW';
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  }
+
   // ── 不蒜子瀏覽次數 ──
   // 由不蒜子腳本自動更新 #busuanzi_value_site_pv
 
@@ -1102,7 +1265,7 @@
   }
 
   // ── Scroll-based nav highlight ──
-  const sections = ['about','pricing','notice','faq','contact'];
+  const sections = ['about','pricing','notice','faq','english','contact'];
   const tabs = document.querySelectorAll('.nav-tab');
 
   function updateTab() {
