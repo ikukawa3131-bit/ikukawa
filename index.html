@@ -1001,8 +1001,9 @@
   <div class="footer-brand">一久川木藝生活館</div>
   <div style="display:flex; align-items:center; justify-content:center; gap:6px; font-size:13px; color:#A89890; margin-bottom:6px;">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" style="width:14px;height:14px;"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
-    累計瀏覽 <strong id="visit-count" style="color:#7A6A62;">---</strong> 次
+    累計瀏覽 <strong id="busuanzi_value_site_pv" style="color:#7A6A62;">---</strong> 次
   </div>
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
   <div>© 2025 一久川木藝生活館 · 保留所有權利</div>
   <div style="margin-top:6px">傳承職人精神 · 守護木藝溫度</div>
 </footer>
@@ -1084,20 +1085,8 @@
     });
   });
 
-  // ── 瀏覽次數 ──
-  async function updateVisitCount() {
-    try {
-      const key = 'ikukawa_visits';
-      let result = await window.storage.get(key, true);
-      let count = result ? parseInt(result.value) || 0 : 0;
-      count++;
-      await window.storage.set(key, String(count), true);
-      document.getElementById('visit-count').textContent = count.toLocaleString();
-    } catch(e) {
-      document.getElementById('visit-count').textContent = '---';
-    }
-  }
-  updateVisitCount();
+  // ── 不蒜子瀏覽次數 ──
+  // 由不蒜子腳本自動更新 #busuanzi_value_site_pv
 
   // ── FAQ toggle ──
   function toggleFaq(el) {
