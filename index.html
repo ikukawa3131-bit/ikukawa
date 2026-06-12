@@ -583,10 +583,12 @@
   }
   .lang-btn:hover { background: var(--primary); border-color: var(--primary); }
   .lang-btn svg { width: 13px; height: 13px; }
+  /* Language toggle - default show Chinese, hide English */
+  .en-only { display: none !important; }
+  .zh-only { display: block !important; }
+  /* When English mode active */
   body.lang-en .zh-only { display: none !important; }
   body.lang-en .en-only { display: block !important; }
-  body:not(.lang-en) .en-only { display: none !important; }
-  body:not(.lang-en) .zh-only { display: block !important; }
 
   /* ── FOOTER ── */
   footer {
@@ -1249,8 +1251,8 @@
       desc: '以珍貴的台灣檜木為材料，親手製作一雙專屬筷子。在製作過程中，檜木的天然香氣令人身心舒暢。課程涵蓋切削、打磨、拋光等完整工序，讓您深刻體驗傳統木工的樂趣，帶回一份充滿溫度的手作禮物。',
       descEn: 'Craft your own pair of chopsticks from precious Taiwan Hinoki cypress. The natural forest fragrance fills the air as you carve, sand, and polish. Experience the full process of traditional woodworking — a deeply personal and aromatic keepsake to bring home.',
       video: 'https://www.youtube.com/embed/G99vc-Ms-Oo'
-
-  // ── 燈箱開關 ──
+    }
+  };
   function openModal(name) {
     const c = courses[name];
     if (!c) return;
