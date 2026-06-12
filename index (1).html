@@ -1,0 +1,1363 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>一久川木藝生活館</title>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-033XKGSZX4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-033XKGSZX4');
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;500;600;700&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #FDFBF7;
+    --primary: #D6C0B3;
+    --primary-dark: #C4A898;
+    --text: #4A403A;
+    --text-light: #7A6A62;
+    --text-lighter: #A89890;
+    --card-bg: #FFFFFF;
+    --card-shadow: 0 2px 20px rgba(74, 64, 58, 0.07);
+    --card-shadow-hover: 0 8px 32px rgba(74, 64, 58, 0.13);
+    --border: rgba(214, 192, 179, 0.35);
+    --accent: #B89A8A;
+    --grain: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Noto Sans TC', sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    line-height: 1.8;
+    font-size: 15px;
+    background-image: var(--grain);
+  }
+
+  /* ── NAV ── */
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(253, 251, 247, 0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 20px;
+  }
+
+  .nav-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    height: 60px;
+  }
+
+  .nav-logo {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text);
+    white-space: nowrap;
+    letter-spacing: 0.05em;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+  }
+
+  .nav-logo svg { width: 22px; height: 22px; }
+
+  .nav-divider {
+    width: 1px;
+    height: 22px;
+    background: var(--border);
+    flex-shrink: 0;
+  }
+
+  .nav-tabs {
+    display: flex;
+    gap: 2px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    flex: 1;
+  }
+
+  .nav-tabs::-webkit-scrollbar { display: none; }
+
+  .nav-tab {
+    scroll-snap-align: start;
+    white-space: nowrap;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-family: 'Noto Sans TC', sans-serif;
+    font-weight: 400;
+    color: var(--text-light);
+    cursor: pointer;
+    border: none;
+    background: transparent;
+    transition: all 0.2s ease;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    flex-shrink: 0;
+  }
+
+  .nav-tab svg { width: 13px; height: 13px; }
+
+  .nav-tab:hover, .nav-tab.active {
+    background: var(--primary);
+    color: var(--text);
+  }
+
+  /* ── HERO ── */
+  .hero {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 60px 20px 40px;
+    text-align: center;
+  }
+
+  .hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    letter-spacing: 0.15em;
+    color: var(--text-lighter);
+    text-transform: uppercase;
+    margin-bottom: 18px;
+  }
+
+  .hero-eyebrow::before, .hero-eyebrow::after {
+    content: '';
+    display: block;
+    width: 30px;
+    height: 1px;
+    background: var(--primary);
+  }
+
+  h1 {
+    font-family: 'Noto Serif TC', serif;
+    font-size: clamp(28px, 6vw, 46px);
+    font-weight: 600;
+    color: var(--text);
+    letter-spacing: 0.08em;
+    line-height: 1.4;
+    margin-bottom: 16px;
+  }
+
+  .hero-sub {
+    color: var(--text-light);
+    font-size: 15px;
+    max-width: 480px;
+    margin: 0 auto 32px;
+    line-height: 1.9;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 18px;
+    background: var(--primary);
+    border-radius: 30px;
+    font-size: 13px;
+    color: var(--text);
+  }
+
+  .hero-badge svg { width: 14px; height: 14px; }
+
+  /* ── MAIN ── */
+  main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+
+  /* ── CARD ── */
+  .card {
+    background: var(--card-bg);
+    border-radius: 20px;
+    box-shadow: var(--card-shadow);
+    padding: 36px;
+    border: 1px solid rgba(214, 192, 179, 0.2);
+    transition: box-shadow 0.3s ease;
+  }
+
+  .card:hover { box-shadow: var(--card-shadow-hover); }
+
+  .section-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 24px;
+  }
+
+  .section-label svg { width: 18px; height: 18px; color: var(--accent); flex-shrink: 0; }
+
+  .section-label h2 {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--text);
+    letter-spacing: 0.05em;
+  }
+
+  .section-label .tag {
+    margin-left: auto;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    color: var(--text-lighter);
+    text-transform: uppercase;
+  }
+
+  /* ── ABOUT ── */
+  .about-photo {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 0 28px;
+    display: block;
+    border-radius: 16px;
+    overflow: hidden;
+    aspect-ratio: 16/9;
+    border: 1px solid var(--border);
+    box-shadow: 0 6px 28px rgba(74, 64, 58, 0.13);
+    position: relative;
+  }
+
+  .about-photo::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 16px;
+    box-shadow: inset 0 0 50px rgba(74, 64, 58, 0.09);
+    pointer-events: none;
+  }
+
+  .about-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+    display: block;
+    transition: transform 0.6s ease;
+  }
+
+  .about-photo:hover img {
+    transform: scale(1.03);
+  }
+
+  .about-text p {
+    color: var(--text-light);
+    margin-bottom: 16px;
+    font-size: 14.5px;
+  }
+
+  .about-text strong { color: var(--text); font-weight: 500; }
+
+  .items-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 20px;
+  }
+
+  @media (max-width: 480px) { .items-grid { grid-template-columns: 1fr; } }
+
+  .item-pill {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 14px 16px;
+    background: #FAF7F4;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+  }
+
+  .item-pill svg { width: 16px; height: 16px; color: var(--accent); flex-shrink: 0; margin-top: 2px; }
+
+  .item-pill-content { }
+  .item-pill-title { font-size: 13.5px; font-weight: 500; color: var(--text); margin-bottom: 2px; }
+  .item-pill-desc { font-size: 12.5px; color: var(--text-light); line-height: 1.6; }
+
+  .divider {
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--border), transparent);
+    margin: 24px 0;
+  }
+
+  .philosophy-title {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .philosophy-title svg { width: 16px; height: 16px; color: var(--accent); }
+
+  /* ── PRICING ── */
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 16px;
+  }
+
+  .price-card {
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  .price-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(74, 64, 58, 0.12);
+  }
+
+  .price-card-img {
+    width: 100%;
+    aspect-ratio: 4/3;
+    background: #F0EAE5;
+    overflow: hidden;
+  }
+
+  .price-card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+  }
+
+  .price-card:hover .price-card-img img { transform: scale(1.04); }
+
+  .price-card-body { padding: 18px; }
+
+  .price-card-name {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 8px;
+  }
+
+  .price-card-meta {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12.5px;
+    color: var(--text-light);
+    margin-bottom: 14px;
+  }
+
+  .price-card-meta svg { width: 13px; height: 13px; }
+
+  .price-row {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+  }
+
+  .price-original {
+    font-size: 13px;
+    color: var(--text-lighter);
+    text-decoration: line-through;
+  }
+
+  .price-sale {
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--accent);
+    font-family: 'Noto Serif TC', serif;
+  }
+
+  .price-sale-unit { font-size: 13px; color: var(--text-light); }
+
+  .sale-badge {
+    display: inline-block;
+    padding: 2px 8px;
+    background: var(--primary);
+    border-radius: 20px;
+    font-size: 11px;
+    color: var(--text);
+    margin-left: auto;
+  }
+
+  /* ── NOTICE ── */
+  .notice-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .notice-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 14px;
+    color: var(--text-light);
+    padding: 14px 16px;
+    background: #FAF7F4;
+    border-radius: 12px;
+    border-left: 3px solid var(--primary);
+  }
+
+  .notice-num {
+    flex-shrink: 0;
+    width: 22px;
+    height: 22px;
+    background: var(--primary);
+    color: var(--text);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: 600;
+    margin-top: 1px;
+  }
+
+  /* ── FAQ ── */
+  .faq-item {
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 10px;
+  }
+
+  .faq-q {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 18px;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 14.5px;
+    color: var(--text);
+    background: #FAF7F4;
+    user-select: none;
+    gap: 12px;
+  }
+
+  .faq-q svg { width: 16px; height: 16px; color: var(--text-light); flex-shrink: 0; transition: transform 0.3s ease; }
+
+  .faq-item.open .faq-q svg { transform: rotate(180deg); }
+
+  .faq-a {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease, padding 0.3s ease;
+    font-size: 14px;
+    color: var(--text-light);
+    line-height: 1.8;
+    padding: 0 18px;
+  }
+
+  .faq-item.open .faq-a { max-height: 200px; padding: 14px 18px 18px; }
+
+  /* ── CONTACT ── */
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-bottom: 20px;
+  }
+
+  @media (max-width: 460px) { .contact-grid { grid-template-columns: 1fr; } }
+
+  .contact-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 16px;
+    border-radius: 14px;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    border: 1.5px solid var(--border);
+    color: var(--text);
+    background: var(--card-bg);
+    transition: all 0.25s ease;
+  }
+
+  .contact-btn svg { width: 20px; height: 20px; }
+
+  .contact-btn:hover {
+    background: var(--primary);
+    border-color: var(--primary);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(214, 192, 179, 0.4);
+  }
+
+  .contact-btn.line { color: #06C755; }
+  .contact-btn.line:hover { background: #06C755; border-color: #06C755; color: white; }
+  .contact-btn.instagram { color: #C13584; }
+  .contact-btn.instagram:hover {
+    background: linear-gradient(135deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    border-color: transparent; color: white;
+  }
+
+  .map-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 15px;
+    border-radius: 14px;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    border: 1.5px solid var(--border);
+    color: var(--text);
+    background: #FAF7F4;
+    transition: all 0.25s ease;
+    width: 100%;
+  }
+
+  .map-link svg { width: 18px; height: 18px; color: var(--accent); }
+
+  .map-link:hover {
+    background: var(--primary);
+    border-color: var(--primary);
+    transform: translateY(-2px);
+  }
+
+  .contact-info {
+    margin-top: 18px;
+    padding: 16px;
+    background: #FAF7F4;
+    border-radius: 12px;
+    font-size: 13.5px;
+    color: var(--text-light);
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    border: 1px solid var(--border);
+  }
+
+  .contact-info svg { width: 16px; height: 16px; flex-shrink: 0; margin-top: 2px; color: var(--accent); }
+
+  /* ── LANG TOGGLE ── */
+  .lang-btn {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 500;
+    border: 1.5px solid var(--border);
+    background: transparent;
+    color: var(--text);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+  }
+  .lang-btn:hover { background: var(--primary); border-color: var(--primary); }
+  .lang-btn svg { width: 13px; height: 13px; }
+  body.lang-en .zh-only { display: none !important; }
+  body.lang-en .en-only { display: block !important; }
+  body:not(.lang-en) .en-only { display: none !important; }
+  body:not(.lang-en) .zh-only { display: block !important; }
+
+  /* ── FOOTER ── */
+  footer {
+    text-align: center;
+    padding: 40px 20px;
+    font-size: 12.5px;
+    color: var(--text-lighter);
+    border-top: 1px solid var(--border);
+  }
+
+  footer .footer-brand {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 15px;
+    color: var(--text-light);
+    margin-bottom: 6px;
+    font-weight: 500;
+  }
+
+  /* ── SCROLL ANIM ── */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.55s ease, transform 0.55s ease;
+  }
+
+  .fade-in.visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  /* ── WOOD TEXTURE DIVIDER ── */
+  .wood-sep {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin: 4px 0;
+  }
+
+  .wood-sep::before, .wood-sep::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--border));
+  }
+
+  .wood-sep::after { background: linear-gradient(to left, transparent, var(--border)); }
+
+  .wood-sep svg { width: 16px; height: 16px; color: var(--primary-dark); flex-shrink: 0; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<header>
+  <nav class="nav-inner">
+    <a href="#" class="nav-logo">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+        <path d="M2 17l10 5 10-5"/>
+        <path d="M2 12l10 5 10-5"/>
+      </svg>
+      一久川木藝
+    </a>
+    <div class="nav-divider"></div>
+    <div class="nav-tabs">
+      <a href="#about" class="nav-tab active">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+        品牌介紹
+      </a>
+      <a href="#pricing" class="nav-tab">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+        DIY 課程
+      </a>
+      <a href="#notice" class="nav-tab">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        預約須知
+      </a>
+      <a href="#faq" class="nav-tab">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3M12 17h.01"/></svg>
+        常見問題
+      </a>
+      <a href="#contact" class="nav-tab">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        聯絡我們
+      </a>
+    </div>
+    <button class="lang-btn" onclick="toggleLang()" id="lang-btn">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 014-10z"/></svg>
+      EN
+    </button>
+  </nav>
+</header>
+
+<!-- HERO -->
+<div class="hero fade-in zh-only">
+  <div class="hero-eyebrow">深耕在地 · 二十年職人精神</div>
+  <h1>一久川木藝生活館</h1>
+  <p class="hero-sub">從彫刻藝品到木藝生活，<br>每一塊木頭都有它獨特的生命故事。</p>
+  <span class="hero-badge">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+    DIY 手作體驗 · 現正開放預約
+  </span>
+</div>
+
+<!-- HERO EN -->
+<div class="hero fade-in en-only">
+  <div class="hero-eyebrow">20+ Years of Woodcraft Tradition · Sanyi, Taiwan</div>
+  <h1 style="font-size:clamp(24px,5vw,38px);">Ikukawa Wood Art Studio</h1>
+  <p class="hero-sub">From traditional carving to modern wood living,<br>every piece of wood holds a unique story.</p>
+  <span class="hero-badge">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+    DIY Workshops · Reservations Open Now
+  </span>
+</div>
+
+<main>
+
+  <!-- ABOUT -->
+  <section id="about" class="card fade-in zh-only">
+    <div class="section-label">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      <h2>品牌介紹</h2>
+      <span class="tag">About Us</span>
+    </div>
+
+    <div class="about-photo">
+      <img
+        src="https://drive.google.com/thumbnail?id=1jOOUOmvwFMnta3YzWPSOPjF2oXH3QFl4&sz=w1200"
+        alt="一久川木藝生活館"
+        loading="lazy"
+        onerror="this.parentElement.style.background='#EDE5DF';this.style.display='none'"
+      >
+    </div>
+
+    <div class="about-text">
+      <p>深耕在地超過<strong>二十年</strong>，我們一直是您身邊值得信賴的木藝專家。從「蔡獻堂彫刻藝品社」到今日的「一久川木藝生活館」，感謝您一路以來的支持與陪伴。</p>
+      <p>為了服務更多老客戶並結識新朋友，我們開設了這個安心平台，將 DIY 課程與長期課程呈現給大家，提供多元化的木藝產品與專業服務，讓每個人都能親身體驗木雕的魅力。</p>
+    </div>
+
+    <div class="items-grid">
+      <div class="item-pill">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+        <div class="item-pill-content">
+          <div class="item-pill-title">檜木精油</div>
+          <div class="item-pill-desc">天然純淨，香氣療癒</div>
+        </div>
+      </div>
+      <div class="item-pill">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+        <div class="item-pill-content">
+          <div class="item-pill-title">奇木桌椅</div>
+          <div class="item-pill-desc">獨一無二，匠心獨具</div>
+        </div>
+      </div>
+      <div class="item-pill">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+        <div class="item-pill-content">
+          <div class="item-pill-title">專業代工</div>
+          <div class="item-pill-desc">聚寶盆製作、木雕客製、維修</div>
+        </div>
+      </div>
+      <div class="item-pill">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+        <div class="item-pill-content">
+          <div class="item-pill-title">藝文推廣</div>
+          <div class="item-pill-desc">DIY 課程、木雕體驗</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="philosophy-title">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+      我們的理念：傳承與永續
+    </div>
+
+    <div class="about-text">
+      <p>我們深信，每一塊木頭都有其獨特的生命故事。透過親手製作的體驗與分享，我們希望傳達一個重要訊息：隨著天然資源（木材）的減少，我們正積極探索如何將可能被廢棄的材料「重新利用」，賦予它們第二次生命，轉化為獨特的創作素材。</p>
+      <p>我們也關注到傳統工藝的傳承危機：隨著老師傅們的年邁與凋零，<strong>手工雕刻刀具的製作師傅在臺灣已寥寥無幾</strong>。一久川木藝生活館將持續以多元形式推廣木雕藝術，邀請您與我們一同，守護這份溫潤的記憶與珍貴的職人精神。</p>
+    </div>
+  </section>
+
+  <!-- ENGLISH INTRO -->
+  <section id="english" class="card fade-in en-only">
+    <div class="section-label">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+      <h2>English Introduction</h2>
+      <span class="tag">For International Visitors</span>
+    </div>
+
+    <div style="background:#FAF7F4; border-radius:14px; padding:22px; border:1px solid var(--border); margin-bottom:20px;">
+      <div style="font-family:'Noto Serif TC',serif; font-size:17px; font-weight:600; color:var(--text); margin-bottom:10px;">Welcome to Ikukawa Wood Art Studio</div>
+      <p style="font-size:14px; color:var(--text-light); line-height:1.9; margin-bottom:12px;">
+        Located in <strong style="color:var(--text);">Sanyi, Miaoli</strong> — Taiwan's most famous woodcraft town — Ikukawa Wood Art Studio has been preserving traditional woodcarving craftsmanship for over <strong style="color:var(--text);">20 years</strong>.
+      </p>
+      <p style="font-size:14px; color:var(--text-light); line-height:1.9;">
+        We offer hands-on <strong style="color:var(--text);">DIY woodcraft experiences</strong> suitable for all skill levels. No experience needed — our instructors guide you through every step. All materials are included. Take home a unique handmade piece created by you!
+      </p>
+    </div>
+
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:20px;">
+      <div class="item-pill">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <div class="item-pill-content">
+          <div class="item-pill-title">Hinoki Essential Oil</div>
+          <div class="item-pill-desc">Pure & natural, aromatic therapy</div>
+        </div>
+      </div>
+      <div class="item-pill">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+        <div class="item-pill-content">
+          <div class="item-pill-title">Unique Wood Furniture</div>
+          <div class="item-pill-desc">One-of-a-kind craftsmanship</div>
+        </div>
+      </div>
+      <div class="item-pill">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+        <div class="item-pill-content">
+          <div class="item-pill-title">DIY Workshops</div>
+          <div class="item-pill-desc">Coaster · Gua sha board · Chopsticks</div>
+        </div>
+      </div>
+      <div class="item-pill">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+        <div class="item-pill-content">
+          <div class="item-pill-title">Custom Woodcarving</div>
+          <div class="item-pill-desc">Bespoke orders & repair service</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div style="font-family:'Noto Serif TC',serif; font-size:15px; font-weight:600; color:var(--text); margin-bottom:12px; display:flex; align-items:center; gap:8px;">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;color:var(--accent);"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      DIY Course Pricing
+    </div>
+
+    <div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(240px, 1fr)); gap:16px; margin-bottom:20px;">
+
+      <!-- Card 1 -->
+      <div class="price-card" onclick="openModal('手作井字隔熱墊')" style="cursor:pointer;">
+        <div class="price-card-img">
+          <img src="https://drive.google.com/thumbnail?id=1tWKnBOQ3P_Ik_TGzKXWXANfTNsFZLL3K&sz=w600" alt="Wooden Coaster" loading="lazy" onerror="this.parentElement.style.background='#EDE5DF';this.style.display='none'">
+        </div>
+        <div class="price-card-body">
+          <div class="price-card-name">Wooden Coaster</div>
+          <div style="font-size:11px; color:var(--text-lighter); margin-bottom:6px;">井字隔熱墊</div>
+          <div class="price-card-meta">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" style="width:13px;height:13px;"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            ~1.5 hrs · All materials included
+          </div>
+          <div class="price-row">
+            <span class="price-original">NT$ 499</span>
+            <span class="price-sale">NT$ 399</span>
+            <span class="sale-badge">Sale</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="price-card" onclick="openModal('流痕刮痧板手做')" style="cursor:pointer;">
+        <div class="price-card-img">
+          <img src="https://drive.google.com/thumbnail?id=1Ao88gprlJhQ8LLC856PqerZ3Ap09OzaY&sz=w600" alt="Gua Sha Board" loading="lazy" onerror="this.parentElement.style.background='#EDE5DF';this.style.display='none'">
+        </div>
+        <div class="price-card-body">
+          <div class="price-card-name">Gua Sha Board</div>
+          <div style="font-size:11px; color:var(--text-lighter); margin-bottom:6px;">流痕刮痧板</div>
+          <div class="price-card-meta">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" style="width:13px;height:13px;"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            ~1.5 hrs · All materials included
+          </div>
+          <div class="price-row">
+            <span class="price-original">NT$ 599</span>
+            <span class="price-sale">NT$ 499</span>
+            <span class="sale-badge">Sale</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="price-card" onclick="openModal('清箸檜香手作')" style="cursor:pointer;">
+        <div class="price-card-img">
+          <img src="https://drive.google.com/thumbnail?id=1YAoKLqe_4Q2VqRFMtWKj0z3Jaw0tOVrF&sz=w600" alt="Hinoki Chopsticks" loading="lazy" onerror="this.parentElement.style.background='#EDE5DF';this.style.display='none'">
+        </div>
+        <div class="price-card-body">
+          <div class="price-card-name">Hinoki Chopsticks</div>
+          <div style="font-size:11px; color:var(--text-lighter); margin-bottom:6px;">清箸檜香手作</div>
+          <div class="price-card-meta">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" style="width:13px;height:13px;"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            ~1–2 hrs · All materials included
+          </div>
+          <div class="price-row">
+            <span class="price-original">NT$ 699</span>
+            <span class="price-sale">NT$ 599</span>
+            <span class="sale-badge">Sale</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <div style="font-family:'Noto Serif TC',serif; font-size:15px; font-weight:600; color:var(--text); margin-bottom:12px; display:flex; align-items:center; gap:8px;">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;color:var(--accent);"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      How to Book
+    </div>
+
+    <div style="background:#FAF7F4; border-radius:12px; padding:16px; border:1px solid var(--border); font-size:13.5px; color:var(--text-light); line-height:2;">
+      <div>📍 <strong style="color:var(--text);">Address：</strong>No.50-4, Bagu Rd., Guangsheng Village, Sanyi Township, Miaoli County, Taiwan</div>
+      <div>📱 <strong style="color:var(--text);">LINE@：</strong>@496plres</div>
+      <div>📸 <strong style="color:var(--text);">Instagram：</strong>@ikukawa313131</div>
+      <div style="margin-top:10px; padding-top:10px; border-top:1px solid var(--border); font-size:12.5px;">
+        ⚠ Reservations required. Small groups (3–5 people): book 2 days in advance. Large groups (6–30): book 3 weeks in advance.
+      </div>
+    </div>
+
+    <a href="https://maps.app.goo.gl/Gp36gKRSRYtCaxYG8" target="_blank" rel="noopener" style="display:flex; align-items:center; justify-content:center; gap:8px; margin-top:14px; padding:14px; background:var(--primary); color:var(--text); border-radius:14px; font-size:14px; font-weight:500; text-decoration:none; transition:all 0.2s;">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
+      Get Directions on Google Maps
+    </a>
+  </section>
+
+  <!-- PRICING -->
+  <section id="pricing" class="card fade-in zh-only">
+    <div class="section-label">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+      <h2>DIY 課程價目表</h2>
+      <span class="tag">Pricing</span>
+    </div>
+
+    <div class="pricing-grid">
+
+      <!-- Card 1 -->
+      <div class="price-card">
+        <div class="price-card-img">
+          <img
+            src="https://drive.google.com/thumbnail?id=1tWKnBOQ3P_Ik_TGzKXWXANfTNsFZLL3K&sz=w600"
+            alt="手作井字隔熱墊"
+            loading="lazy"
+            onerror="this.parentElement.style.background='#EDE5DF';this.style.display='none'"
+          >
+        </div>
+        <div class="price-card-body">
+          <div class="price-card-name">手作井字隔熱墊</div>
+          <div class="price-card-meta">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            約 1.5 小時
+          </div>
+          <div class="price-row">
+            <span class="price-original">NT$ 499</span>
+            <span class="price-sale">NT$ 399</span>
+            <span class="sale-badge">特價</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="price-card">
+        <div class="price-card-img">
+          <img
+            src="https://drive.google.com/thumbnail?id=1Ao88gprlJhQ8LLC856PqerZ3Ap09OzaY&sz=w600"
+            alt="流痕刮痧板手做"
+            loading="lazy"
+            onerror="this.parentElement.style.background='#EDE5DF';this.style.display='none'"
+          >
+        </div>
+        <div class="price-card-body">
+          <div class="price-card-name">流痕刮痧板手做</div>
+          <div class="price-card-meta">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            約 1.5 小時
+          </div>
+          <div class="price-row">
+            <span class="price-original">NT$ 599</span>
+            <span class="price-sale">NT$ 499</span>
+            <span class="sale-badge">特價</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="price-card">
+        <div class="price-card-img">
+          <img
+            src="https://drive.google.com/thumbnail?id=1YAoKLqe_4Q2VqRFMtWKj0z3Jaw0tOVrF&sz=w600"
+            alt="清箸檜香手作"
+            loading="lazy"
+            onerror="this.parentElement.style.background='#EDE5DF';this.style.display='none'"
+          >
+        </div>
+        <div class="price-card-body">
+          <div class="price-card-name">清箸檜香手作</div>
+          <div class="price-card-meta">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            約 1–2 小時
+          </div>
+          <div class="price-row">
+            <span class="price-original">NT$ 699</span>
+            <span class="price-sale">NT$ 599</span>
+            <span class="sale-badge">特價</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- NOTICE -->
+  <section id="notice" class="card fade-in zh-only">
+    <div class="section-label">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+      <h2>預約須知</h2>
+      <span class="tag">Notice</span>
+    </div>
+
+    <ul class="notice-list">
+      <li>
+        <span class="notice-num">1</span>
+        <span><strong>小團體（3–5 人）：</strong>請於 <strong>2 天前</strong> 透過 LINE@ 完成預約，以便我們為您準備材料。</span>
+      </li>
+      <li>
+        <span class="notice-num">2</span>
+        <span><strong>團體（6–30 人）：</strong>請於 <strong>3 週前</strong> 完成預約，我們將為您安排專屬場次。</span>
+      </li>
+      <li>
+        <span class="notice-num">3</span>
+        <span><strong>人數限制：</strong>每場次人數限 <strong>3 人以上、30 人以下</strong>為原則。</span>
+      </li>
+      <li>
+        <span class="notice-num">4</span>
+        <span>導覽依預約時段<strong>準時進行</strong>，如需取消請提前來電告知；遲到超過 <strong>15 分鐘</strong>視同取消預約。</span>
+      </li>
+      <li>
+        <span class="notice-num">5</span>
+        <span>如需取消或改期，請於<strong>前一天中午 12:00 前</strong>通知，逾時將酌收材料費。</span>
+      </li>
+    </ul>
+
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="card fade-in zh-only">
+    <div class="section-label">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3M12 17h.01"/></svg>
+      <h2>常見問題</h2>
+      <span class="tag">FAQ</span>
+    </div>
+
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-q">
+        <span>課程需要有木工基礎才能參加嗎？</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </div>
+      <div class="faq-a">完全不需要！我們的 DIY 課程專為初學者設計，老師會全程引導，從工具使用到完成作品，每個步驟都有詳細說明，適合親子同樂或朋友共同體驗。</div>
+    </div>
+
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-q">
+        <span>可以客製化雕刻圖案或文字嗎？</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </div>
+      <div class="faq-a">可以！我們提供客製化木雕服務，包含刻字、圖案雕刻等，請事先透過 LINE@ 聯繫我們，說明您的需求，我們會為您評估可行性並提供報價。</div>
+    </div>
+
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-q">
+        <span>課程材料費是否包含在價格內？</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </div>
+      <div class="faq-a">是的，價目表上的價格已包含全部材料費用，無需另外準備任何材料，完成的作品可直接帶回家留念或使用。</div>
+    </div>
+
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-q">
+        <span>如何取得代工報價？</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </div>
+      <div class="faq-a">如需代工報價，請透過官方 LINE@（<strong>@496plres</strong>）與我們聯繫，說明您的需求與數量，我們將由官方 LINE@ 為您回覆詳細報價。</div>
+    </div>
+
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="card fade-in zh-only">
+    <div class="section-label">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      <h2>聯絡我們</h2>
+      <span class="tag">Contact</span>
+    </div>
+
+    <div class="contact-grid">
+      <a href="https://line.me/R/ti/p/@496plres" target="_blank" rel="noopener" class="contact-btn line">
+        <!-- LINE SVG icon -->
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 11.5C21 7.36 16.97 4 12 4S3 7.36 3 11.5c0 3.73 3.3 6.86 7.76 7.45.3.07.72.2.82.47.09.24.06.61.03.85l-.13.8c-.04.24-.18.95.83.52 1.02-.43 5.46-3.22 7.45-5.51 1.37-1.51 2.24-3.23 2.24-5.08z"/>
+          <path d="M9 10h6M9 13h4" stroke-width="1.5"/>
+        </svg>
+        LINE@ @496plres
+      </a>
+      <a href="https://www.instagram.com/ikukawa313131" target="_blank" rel="noopener" class="contact-btn instagram">
+        <!-- Instagram SVG icon -->
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+          <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/>
+          <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+        </svg>
+        IG @ikukawa313131
+      </a>
+    </div>
+
+    <a href="https://maps.app.goo.gl/Gp36gKRSRYtCaxYG8" target="_blank" rel="noopener" class="map-link">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+        <polygon points="3 11 22 2 13 21 11 13 3 11"/>
+      </svg>
+      開啟 Google 地圖導航
+    </a>
+
+    <div class="contact-info">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      <div>
+        <strong>預約請透過 LINE@ 聯繫</strong><br>
+        建議預約日期 3 天前完成預約，我們將盡快為您確認課程時段。
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ── 課程詳細燈箱 ── -->
+<div id="course-modal" style="display:none; position:fixed; inset:0; z-index:999; background:rgba(74,64,58,0.55); backdrop-filter:blur(6px); overflow-y:auto; padding:20px;">
+  <div style="max-width:560px; margin:0 auto; background:#FDFBF7; border-radius:20px; overflow:hidden; box-shadow:0 20px 60px rgba(74,64,58,0.25);">
+    <!-- 關閉按鈕 -->
+    <div style="display:flex; justify-content:flex-end; padding:16px 16px 0;">
+      <button onclick="closeModal()" style="background:var(--primary); border:none; border-radius:50%; width:36px; height:36px; cursor:pointer; display:flex; align-items:center; justify-content:center;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#4A403A" stroke-width="2" stroke-linecap="round" style="width:18px;height:18px;"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <!-- 課程圖片 -->
+    <div id="modal-img-wrap" style="width:100%; aspect-ratio:4/3; overflow:hidden;">
+      <img id="modal-img" src="" alt="" style="width:100%; height:100%; object-fit:cover;">
+    </div>
+    <!-- 課程內容 -->
+    <div style="padding:24px;">
+      <div style="display:flex; align-items:center; gap:10px; margin-bottom:6px;">
+        <span id="modal-badge" style="background:var(--primary); color:var(--text); border-radius:20px; padding:3px 12px; font-size:12px;">
+          <span class="zh-only">特價</span><span class="en-only">Sale</span>
+        </span>
+      </div>
+      <h3 id="modal-title" style="font-family:'Noto Serif TC',serif; font-size:22px; font-weight:600; color:#4A403A; margin-bottom:4px;"></h3>
+      <div id="modal-title-en" style="font-size:13px; color:#A89890; margin-bottom:12px;"></div>
+      <!-- 時間/價格 -->
+      <div style="display:flex; gap:16px; margin-bottom:16px; flex-wrap:wrap;">
+        <div style="display:flex; align-items:center; gap:6px; font-size:13px; color:#7A6A62;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" style="width:15px;height:15px;"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <span id="modal-time"></span>
+        </div>
+        <div style="display:flex; align-items:baseline; gap:8px;">
+          <span id="modal-orig" style="font-size:13px; color:#A89890; text-decoration:line-through;"></span>
+          <span id="modal-price" style="font-size:22px; font-weight:600; color:#B89A8A; font-family:'Noto Serif TC',serif;"></span>
+        </div>
+      </div>
+      <!-- 分隔線 -->
+      <div style="height:1px; background:linear-gradient(to right, transparent, #D6C0B3, transparent); margin-bottom:16px;"></div>
+      <!-- 課程說明 -->
+      <div style="font-size:14px; color:#7A6A62; line-height:1.9; margin-bottom:20px;">
+        <p id="modal-desc"></p>
+      </div>
+      <!-- 影片區塊 -->
+      <div id="modal-video-wrap" style="display:none; margin-bottom:20px;">
+        <div style="font-family:'Noto Serif TC',serif; font-size:15px; font-weight:600; color:#4A403A; margin-bottom:10px; display:flex; align-items:center; gap:8px;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" style="width:16px;height:16px;color:#B89A8A;"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+          <span class="zh-only">課程影片</span><span class="en-only">Course Video</span>
+        </div>
+        <div style="border-radius:12px; overflow:hidden; aspect-ratio:16/9; background:#EDE5DF;">
+          <iframe id="modal-video" src="" allowfullscreen style="width:100%; height:100%; border:none;"></iframe>
+        </div>
+        <p style="font-size:12px; color:#A89890; margin-top:8px; text-align:center;">
+          <span class="zh-only">觀看課程示範影片，了解製作流程</span>
+          <span class="en-only">Watch the course demo video to learn the process</span>
+        </p>
+      </div>
+      <!-- 注意事項 -->
+      <div style="background:#FAF7F4; border-radius:12px; padding:14px 16px; border:1px solid rgba(214,192,179,0.35); margin-bottom:16px;">
+        <div style="font-size:13px; font-weight:500; color:#4A403A; margin-bottom:8px;">
+          <span class="zh-only">課程注意事項</span>
+          <span class="en-only">Important Notes</span>
+        </div>
+        <ul style="list-style:none; padding:0; margin:0; font-size:13px; color:#7A6A62; display:flex; flex-direction:column; gap:6px;">
+          <li style="display:flex; gap:8px;"><span style="color:#B89A8A;">•</span>
+            <span class="zh-only">材料費已包含在課程價格內</span>
+            <span class="en-only">All materials are included in the price</span>
+          </li>
+          <li style="display:flex; gap:8px;"><span style="color:#B89A8A;">•</span>
+            <span class="zh-only">完成作品可直接帶回家</span>
+            <span class="en-only">Take your finished piece home</span>
+          </li>
+          <li style="display:flex; gap:8px;"><span style="color:#B89A8A;">•</span>
+            <span class="zh-only">全程老師引導，無需木工基礎</span>
+            <span class="en-only">Instructor-guided, no experience needed</span>
+          </li>
+          <li style="display:flex; gap:8px;"><span style="color:#B89A8A;">•</span>
+            <span class="zh-only">請於上課前 2 天透過 LINE@ 完成預約</span>
+            <span class="en-only">Book via LINE@ at least 2 days before class</span>
+          </li>
+        </ul>
+      </div>
+      <!-- 預約按鈕 -->
+      <a href="https://line.me/R/ti/p/@496plres" target="_blank" rel="noopener" style="display:flex; align-items:center; justify-content:center; gap:8px; background:#06C755; color:white; border-radius:14px; padding:14px; font-size:15px; font-weight:500; text-decoration:none;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" style="width:18px;height:18px;"><path d="M21 11.5C21 7.36 16.97 4 12 4S3 7.36 3 11.5c0 3.73 3.3 6.86 7.76 7.45.3.07.72.2.82.47.09.24.06.61.03.85l-.13.8c-.04.24-.18.95.83.52 1.02-.43 5.46-3.22 7.45-5.51 1.37-1.51 2.24-3.23 2.24-5.08z"/></svg>
+        <span class="zh-only">立即透過 LINE@ 預約</span>
+        <span class="en-only">Book Now via LINE@</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-brand">一久川木藝生活館</div>
+  <div style="display:flex; align-items:center; justify-content:center; gap:6px; font-size:13px; color:#A89890; margin-bottom:6px;">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" style="width:14px;height:14px;"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+    累計瀏覽 <strong id="busuanzi_value_site_pv" style="color:#7A6A62;">---</strong> 次
+  </div>
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <div>© 2025 一久川木藝生活館 · 保留所有權利</div>
+  <div style="margin-top:6px">傳承職人精神 · 守護木藝溫度</div>
+</footer>
+
+<script>
+  // ── 課程資料 ──
+  const courses = {
+    '手作井字隔熱墊': {
+      img: 'https://drive.google.com/thumbnail?id=1tWKnBOQ3P_Ik_TGzKXWXANfTNsFZLL3K&sz=w800',
+      nameEn: 'Wooden Coaster',
+      time: '約 1.5 小時 · ~1.5 hrs',
+      orig: 'NT$ 499',
+      price: 'NT$ 399',
+      desc: '透過手工榫接技法，將木條交錯拼接成獨特的井字造型隔熱墊。每一條木料都經過精心挑選，紋路自然溫潤，製作過程簡單有趣，非常適合初次體驗木工的朋友。完成後可直接用於生活中，兼具實用與美感。',
+      descEn: 'Using traditional joinery techniques, interlace wooden strips into a unique grid-pattern coaster. Each piece of wood is carefully selected for its natural grain. Simple and fun to make — perfect for first-time woodworkers. Take it home and use it every day!',
+      video: ''
+    },
+    '流痕刮痧板手做': {
+      img: 'https://drive.google.com/thumbnail?id=1Ao88gprlJhQ8LLC856PqerZ3Ap09OzaY&sz=w800',
+      nameEn: 'Gua Sha Board',
+      time: '約 1.5 小時 · ~1.5 hrs',
+      orig: 'NT$ 599',
+      price: 'NT$ 499',
+      desc: '使用天然木材，親手打磨出帶有流木紋理的刮痧板。課程中將學習木料的基本打磨技巧，從粗砂到細砂，感受木材質地的變化。完成後塗上天然油脂保護，打造出獨一無二、貼合手感的個人專屬刮痧板。',
+      descEn: 'Sand and shape a natural wood gua sha board with beautiful flowing grain. Learn basic sanding techniques — from coarse to fine — and feel the transformation of the wood. Finished with natural oil, creating a unique, ergonomic wellness tool that is yours alone.',
+      video: ''
+    },
+    '清箸檜香手作': {
+      img: 'https://drive.google.com/thumbnail?id=1YAoKLqe_4Q2VqRFMtWKj0z3Jaw0tOVrF&sz=w800',
+      nameEn: 'Hinoki Chopsticks',
+      time: '約 1–2 小時 · ~1–2 hrs',
+      orig: 'NT$ 699',
+      price: 'NT$ 599',
+      desc: '以珍貴的台灣檜木為材料，親手製作一雙專屬筷子。在製作過程中，檜木的天然香氣令人身心舒暢。課程涵蓋切削、打磨、拋光等完整工序，讓您深刻體驗傳統木工的樂趣，帶回一份充滿溫度的手作禮物。',
+      descEn: 'Craft your own pair of chopsticks from precious Taiwan Hinoki cypress. The natural forest fragrance fills the air as you carve, sand, and polish. Experience the full process of traditional woodworking — a deeply personal and aromatic keepsake to bring home.',
+      video: 'https://www.youtube.com/embed/G99vc-Ms-Oo'
+
+  // ── 燈箱開關 ──
+  function openModal(name) {
+    const c = courses[name];
+    if (!c) return;
+    const isEn = document.body.classList.contains('lang-en');
+    document.getElementById('modal-img').src = c.img;
+    document.getElementById('modal-img').alt = isEn ? c.nameEn : name;
+    document.getElementById('modal-title').textContent = isEn ? c.nameEn : name;
+    document.getElementById('modal-title-en').textContent = isEn ? name : c.nameEn;
+    document.getElementById('modal-time').textContent = c.time;
+    document.getElementById('modal-orig').textContent = c.orig;
+    document.getElementById('modal-price').textContent = c.price;
+    document.getElementById('modal-desc').textContent = isEn ? c.descEn : c.desc;
+    // 影片
+    const vWrap = document.getElementById('modal-video-wrap');
+    const vFrame = document.getElementById('modal-video');
+    if (c.video) {
+      vFrame.src = c.video;
+      vWrap.style.display = 'block';
+    } else {
+      vFrame.src = '';
+      vWrap.style.display = 'none';
+    }
+    document.getElementById('course-modal').style.display = 'block';
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    document.getElementById('course-modal').style.display = 'none';
+    document.getElementById('modal-video').src = '';
+    document.body.style.overflow = '';
+  }
+
+  // 點背景關閉
+  document.getElementById('course-modal').addEventListener('click', function(e) {
+    if (e.target === this) closeModal();
+  });
+
+  // ESC 關閉
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+  // ── 課程卡片點擊 ──
+  document.querySelectorAll('.price-card').forEach(card => {
+    card.style.cursor = 'pointer';
+    card.addEventListener('click', () => {
+      const name = card.querySelector('.price-card-name').textContent.trim();
+      openModal(name);
+    });
+  });
+
+  // ── 語言切換 ──
+  function toggleLang() {
+    const isEn = document.body.classList.toggle('lang-en');
+    const btn = document.getElementById('lang-btn');
+    if (isEn) {
+      btn.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg> 中文`;
+      document.documentElement.lang = 'en';
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      btn.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 014-10z"/></svg> EN`;
+      document.documentElement.lang = 'zh-TW';
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  }
+
+  // ── 不蒜子瀏覽次數 ──
+  // 由不蒜子腳本自動更新 #busuanzi_value_site_pv
+
+  // ── FAQ toggle ──
+  function toggleFaq(el) {
+    el.classList.toggle('open');
+  }
+
+  // ── Scroll-based nav highlight ──
+  const sections = ['about','pricing','notice','faq','english','contact'];
+  const tabs = document.querySelectorAll('.nav-tab');
+
+  function updateTab() {
+    let current = '';
+    sections.forEach(id => {
+      const sec = document.getElementById(id);
+      if (sec && window.scrollY >= sec.offsetTop - 100) current = id;
+    });
+    tabs.forEach(t => {
+      t.classList.toggle('active', t.getAttribute('href') === '#' + current);
+    });
+  }
+
+  window.addEventListener('scroll', updateTab, { passive: true });
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      tab.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+    });
+  });
+
+  // ── Fade-in observer ──
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.08 });
+
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
