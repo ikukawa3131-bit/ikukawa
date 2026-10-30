@@ -69,7 +69,17 @@
       "description": "",
       "image": "https://drive.google.com/thumbnail?id=1RUBxnHTwdKtcNjDmbRdF1y7m8bwTrJ_G&sz=w1000",
       "detailUrl": "https://script.google.com/macros/s/AKfycbyN10EhP0O2YyUcsDtGW1efLhoRFavgPIqql5bQrsty9cdTqct3jjiz4kwRSBPm1Wua/exec?id=WB-004"
+    },
+    {
+      "id": "ART-003",
+      "category": "藝品",
+      "name": "彌勒佛",
+      "spec": "紅檜木/長2尺寬2尺高3尺",
+      "price": 360000,
+      "description": "",
+      "image": "https://drive.google.com/thumbnail?id=1NzX1KljP5jh5FSdNusuGlWsPsoRkWFUW&sz=w1000",
+      "detailUrl": "https://script.google.com/macros/s/AKfycbyN10EhP0O2YyUcsDtGW1efLhoRFavgPIqql5bQrsty9cdTqct3jjiz4kwRSBPm1Wua/exec?id=ART-003"
     }
   ],
-  "updatedAt": "2026-10-30T08:11:29.285Z"
+  "updatedAt": "2026-10-30T08:31:33.831Z"
 }
