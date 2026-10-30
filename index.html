@@ -704,6 +704,22 @@ main,.hero,.nav-inner{max-width:1100px}
 @media(max-width:440px){.catalog-grid{grid-template-columns:1fr}.catalog-item img{height:220px}}
 
 
+
+/* 木藝典藏館商品詳細資料：站內彈窗，不再跳轉 Apps Script */
+.catalog-detail-modal[hidden]{display:none!important}
+.catalog-detail-modal{position:fixed;inset:0;z-index:1000;background:rgba(28,23,20,.66);display:flex;align-items:center;justify-content:center;padding:20px}
+.catalog-detail-panel{position:relative;background:#fffaf5;border-radius:18px;width:min(820px,100%);max-height:90vh;overflow:auto;box-shadow:0 18px 65px #0004}
+.catalog-detail-close{position:sticky;top:12px;float:right;margin:12px 12px -55px 0;z-index:1;border:0;background:#fff;border-radius:50%;width:42px;height:42px;font-size:27px;cursor:pointer;box-shadow:0 2px 12px #0002}
+.catalog-detail-content{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+.catalog-detail-image{width:100%;height:100%;max-height:620px;min-height:300px;object-fit:contain;background:#f5f0e9}
+.catalog-detail-body{padding:38px 28px;overflow-wrap:anywhere}
+.catalog-detail-category,.catalog-detail-spec{color:var(--text-light);font-size:14px;margin-bottom:12px}
+.catalog-detail-body h2{font-family:'Noto Serif TC',serif;font-size:25px;line-height:1.5;margin-bottom:14px}
+.catalog-detail-price{color:#70513B;font-size:24px;font-weight:700;margin:16px 0 24px}
+.catalog-detail-body h3{font-size:16px;margin-bottom:8px}
+.catalog-detail-description{white-space:pre-line;color:var(--text-light);font-size:14px;margin-bottom:24px}
+.catalog-modal-open{overflow:hidden}
+@media(max-width:620px){.catalog-detail-content{grid-template-columns:1fr}.catalog-detail-image{height:260px;min-height:0}.catalog-detail-body{padding:22px}.catalog-detail-panel{max-height:92vh}}
 </style>
 </head>
 <body>
@@ -1363,9 +1379,9 @@ main,.hero,.nav-inner{max-width:1100px}
     for (const p of shown) {
       const card = document.createElement('a');
       card.className = 'catalog-item';
-      const url = String(p.detailUrl || '');
-      card.href = /^https:\/\//i.test(url) ? url : 'https://line.me/R/ti/p/@496plres';
-      card.target = '_blank'; card.rel = 'noopener noreferrer';
+      card.href = '#products';
+      card.setAttribute('aria-label', '查看商品詳細介紹：' + String(p.name || '木藝商品'));
+      card.addEventListener('click', event => { event.preventDefault(); showProductDetail(p); });
       if (p.image && /^https:\/\//i.test(String(p.image))) {
         const img = document.createElement('img');
         img.src = p.image; img.alt = String(p.name || '木藝商品'); img.loading = 'lazy';
@@ -1381,6 +1397,36 @@ main,.hero,.nav-inner{max-width:1100px}
       body.append(name, spec, price); card.appendChild(body); grid.appendChild(card);
     }
   }
+  const modal = document.getElementById('catalog-detail-modal');
+  const detailContent = document.getElementById('catalog-detail-content');
+  const closeDetail = () => { modal.hidden = true; document.body.classList.remove('catalog-modal-open'); };
+  document.getElementById('catalog-detail-close').addEventListener('click', closeDetail);
+  modal.addEventListener('click', e => { if (e.target === modal) closeDetail(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && !modal.hidden) closeDetail(); });
+  function showProductDetail(p) {
+    detailContent.replaceChildren();
+    const img = document.createElement('img');
+    if (p.image && /^https:\/\//i.test(String(p.image))) {
+      img.src = String(p.image); img.alt = String(p.name || '商品照片');
+      img.className = 'catalog-detail-image'; detailContent.appendChild(img);
+    }
+    const content = document.createElement('div'); content.className = 'catalog-detail-body';
+    const category = document.createElement('p'); category.className = 'catalog-detail-category'; category.textContent = normalized(p.category);
+    const title = document.createElement('h2'); title.id = 'catalog-detail-title'; title.textContent = p.name || '木藝商品';
+    const spec = document.createElement('p'); spec.className = 'catalog-detail-spec'; spec.textContent = p.spec || '';
+    const amount = Number(String(p.price || '').replace(/[^0-9.]/g, ''));
+    const price = document.createElement('p'); price.className = 'catalog-detail-price'; price.textContent = amount > 0 ? 'NT$ ' + amount.toLocaleString('zh-TW') : '歡迎洽詢';
+    content.append(category, title, spec, price);
+    if (p.description) {
+      const heading = document.createElement('h3'); heading.textContent = '作品介紹';
+      const desc = document.createElement('p'); desc.className = 'catalog-detail-description'; desc.textContent = String(p.description);
+      content.append(heading, desc);
+    }
+    const inquiry = document.createElement('a'); inquiry.href = 'https://line.me/R/ti/p/@496plres'; inquiry.target = '_blank'; inquiry.rel = 'noopener noreferrer'; inquiry.className = 'wood-btn'; inquiry.textContent = '透過 LINE 詢問這件商品';
+    content.appendChild(inquiry); detailContent.appendChild(content);
+    modal.hidden = false; document.body.classList.add('catalog-modal-open');
+    document.getElementById('catalog-detail-close').focus();
+  }
   tabs.addEventListener('click', e => {
     const button = e.target.closest('button[data-category]');
     if (!button) return;
@@ -1394,5 +1440,11 @@ main,.hero,.nav-inner{max-width:1100px}
     .catch(() => { status.textContent = '商品目錄尚未完成同步，請透過官方 LINE 洽詢。'; });
 })();
 </script>
+<div class="catalog-detail-modal" id="catalog-detail-modal" hidden role="dialog" aria-modal="true" aria-labelledby="catalog-detail-title">
+  <div class="catalog-detail-panel">
+    <button type="button" id="catalog-detail-close" class="catalog-detail-close" aria-label="關閉商品詳細介紹">×</button>
+    <div id="catalog-detail-content" class="catalog-detail-content"></div>
+  </div>
+</div>
 </body>
 </html>
