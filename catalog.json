@@ -1,0 +1,75 @@
+{
+  "products": [
+    {
+      "id": "WB-001",
+      "category": "聚寶瓶",
+      "name": "台灣肖楠聚寶盆",
+      "spec": "83才",
+      "price": 415000,
+      "description": "",
+      "image": "https://drive.google.com/thumbnail?id=1DCkCF1cUCTsT8t5IJRVmqS6nVgLk7mz8&sz=w1000",
+      "detailUrl": "https://script.google.com/macros/s/AKfycbyN10EhP0O2YyUcsDtGW1efLhoRFavgPIqql5bQrsty9cdTqct3jjiz4kwRSBPm1Wua/exec?id=WB-001"
+    },
+    {
+      "id": "EO-001",
+      "category": "精油",
+      "name": "台灣扁柏精油",
+      "spec": "台灣檜木/10ML",
+      "price": 300,
+      "description": "",
+      "image": "https://drive.google.com/thumbnail?id=1kIz8Koil-gf5XlMdC0jnTBeEvBsY75sa&sz=w1000",
+      "detailUrl": "https://script.google.com/macros/s/AKfycbyN10EhP0O2YyUcsDtGW1efLhoRFavgPIqql5bQrsty9cdTqct3jjiz4kwRSBPm1Wua/exec?id=EO-001"
+    },
+    {
+      "id": "ART-001",
+      "category": "藝品",
+      "name": "龍龜",
+      "spec": "牛樟",
+      "price": 1200000,
+      "description": "",
+      "image": "https://drive.google.com/thumbnail?id=1ew6D1_sEq2gmAMUG_zcDYygOztnNdeP0&sz=w1000",
+      "detailUrl": "https://script.google.com/macros/s/AKfycbyN10EhP0O2YyUcsDtGW1efLhoRFavgPIqql5bQrsty9cdTqct3jjiz4kwRSBPm1Wua/exec?id=ART-001"
+    },
+    {
+      "id": "WB-002",
+      "category": "聚寶瓶",
+      "name": "台灣檜木聚寶盆",
+      "spec": "台灣檜木/116才",
+      "price": 464000,
+      "description": "",
+      "image": "https://drive.google.com/thumbnail?id=1TIUvKO3_6i8mcVDdbGT4d7uPeJ5wtwa4&sz=w1000",
+      "detailUrl": "https://script.google.com/macros/s/AKfycbyN10EhP0O2YyUcsDtGW1efLhoRFavgPIqql5bQrsty9cdTqct3jjiz4kwRSBPm1Wua/exec?id=WB-002"
+    },
+    {
+      "id": "WB-003",
+      "category": "聚寶瓶",
+      "name": "台灣檜木聚寶盆",
+      "spec": "台灣檜木/132才",
+      "price": 396000,
+      "description": "",
+      "image": "https://drive.google.com/thumbnail?id=18ur2f-qJqC0qipZeGt3DDla3dBy_6qKv&sz=w1000",
+      "detailUrl": "https://script.google.com/macros/s/AKfycbyN10EhP0O2YyUcsDtGW1efLhoRFavgPIqql5bQrsty9cdTqct3jjiz4kwRSBPm1Wua/exec?id=WB-003"
+    },
+    {
+      "id": "ART-002",
+      "category": "藝品",
+      "name": "台灣檜木金魚",
+      "spec": "台灣檜木/長五尺寬2尺8高52",
+      "price": 388888,
+      "description": "",
+      "image": "https://drive.google.com/thumbnail?id=1DEuzhlM3kKmZyNIemYPNng6bKvxtgNx5&sz=w1000",
+      "detailUrl": "https://script.google.com/macros/s/AKfycbyN10EhP0O2YyUcsDtGW1efLhoRFavgPIqql5bQrsty9cdTqct3jjiz4kwRSBPm1Wua/exec?id=ART-002"
+    },
+    {
+      "id": "WB-004",
+      "category": "聚寶瓶",
+      "name": "台灣檜木聚寶盆",
+      "spec": "台灣黃檜/84才",
+      "price": 336000,
+      "description": "",
+      "image": "https://drive.google.com/thumbnail?id=1RUBxnHTwdKtcNjDmbRdF1y7m8bwTrJ_G&sz=w1000",
+      "detailUrl": "https://script.google.com/macros/s/AKfycbyN10EhP0O2YyUcsDtGW1efLhoRFavgPIqql5bQrsty9cdTqct3jjiz4kwRSBPm1Wua/exec?id=WB-004"
+    }
+  ],
+  "updatedAt": "2026-10-30T07:57:07.829Z"
+}
