@@ -703,12 +703,7 @@ main,.hero,.nav-inner{max-width:1100px}
 @media(max-width:720px){.catalog-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.catalog-item img{height:155px}}
 @media(max-width:440px){.catalog-grid{grid-template-columns:1fr}.catalog-item img{height:220px}}
 
-/* 木藝典藏館：直接嵌入可運作的 GAS 公開展示頁 */
-.catalog-embed-wrap{width:100%;min-width:0}
-#ikukawa-catalog-frame{display:block;width:100%;height:1050px;min-height:600px;border:1px solid var(--border);border-radius:16px;background:#fff}
-.catalog-embed-note{text-align:center;font-size:13px;color:var(--text-light);margin-top:12px}
-.catalog-embed-note a{color:#70513B;text-decoration:underline}
-@media(max-width:650px){#ikukawa-catalog-frame{height:1150px;border-radius:10px}}
+
 </style>
 </head>
 <body>
@@ -779,11 +774,17 @@ main,.hero,.nav-inner{max-width:1100px}
 <section class="home-section zh-only" id="products">
 <h2 class="home-heading">木藝典藏館</h2>
 <p class="home-lead">三義木雕、聚寶盆・聚寶瓶、奇木桌椅與檜木精油。僅展示一久川已勾選「官網展示」的商品。</p>
-<!-- 商品展示直接嵌入 Apps Script 公開典藏館，避免跨網域 JSONP 載入失敗 -->
-<div class="catalog-embed-wrap">
-  <iframe id="ikukawa-catalog-frame" title="一久川木藝典藏館商品目錄" src="https://script.google.com/macros/s/AKfycbyN10EhP0O2YyUcsDtGW1efLhoRFavgPIqql5bQrsty9cdTqct3jjiz4kwRSBPm1Wua/exec?catalogPage=1" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-  <p class="catalog-embed-note">如果商品目錄沒有顯示，請<a href="https://script.google.com/macros/s/AKfycbyN10EhP0O2YyUcsDtGW1efLhoRFavgPIqql5bQrsty9cdTqct3jjiz4kwRSBPm1Wua/exec?catalogPage=1" target="_blank" rel="noopener noreferrer">點此開啟完整木藝典藏館</a>。</p>
+<!-- 木藝典藏館：GitHub 同源公開資料，不使用 Google Apps Script iframe -->
+<div class="catalog-tabs" id="catalog-tabs" aria-label="商品分類">
+  <button type="button" class="catalog-tab active" data-category="all">全部商品</button>
+  <button type="button" class="catalog-tab" data-category="木雕藝品">木雕藝品</button>
+  <button type="button" class="catalog-tab" data-category="聚寶盆・聚寶瓶">聚寶盆・聚寶瓶</button>
+  <button type="button" class="catalog-tab" data-category="奇木桌椅">奇木桌椅</button>
+  <button type="button" class="catalog-tab" data-category="檜木精油">檜木精油</button>
 </div>
+<p class="catalog-status" id="catalog-status" role="status">商品資料載入中…</p>
+<div class="catalog-grid" id="catalog-grid"></div>
+<p class="catalog-embed-note">商品資訊依一久川最新公告為準。如需詢問商品，歡迎使用官方 LINE。</p>
 <div class="home-actions"><a class="wood-btn secondary" href="https://line.me/R/ti/p/@496plres" rel="noopener" target="_blank">LINE 詢問商品與客製服務</a></div>
 </section>
 <section class="home-section zh-only" id="groups">
@@ -1339,5 +1340,59 @@ main,.hero,.nav-inner{max-width:1100px}
 <div class="mobile-actions zh-only"><a class="wood-btn" href="#experience">DIY課程預約</a><a class="wood-btn secondary" href="https://line.me/R/ti/p/@496plres" rel="noopener" target="_blank">LINE商品詢價</a></div>
 
 
+
+<script>
+/* 商品資料只從本站 catalog.json 載入，不接觸 Google 帳號或管理系統。 */
+(function () {
+  const grid = document.getElementById('catalog-grid');
+  const status = document.getElementById('catalog-status');
+  const tabs = document.getElementById('catalog-tabs');
+  if (!grid || !status || !tabs) return;
+  let products = [];
+  let selected = 'all';
+  const categories = {
+    '藝品':'木雕藝品','木雕':'木雕藝品','木雕藝品':'木雕藝品',
+    '聚寶瓶':'聚寶盆・聚寶瓶','聚寶盆':'聚寶盆・聚寶瓶','聚寶盆・聚寶瓶':'聚寶盆・聚寶瓶',
+    '奇木桌椅':'奇木桌椅','精油':'檜木精油','檜木精油':'檜木精油'
+  };
+  const normalized = value => categories[String(value || '').trim()] || String(value || '').trim();
+  function draw() {
+    grid.replaceChildren();
+    const shown = products.filter(p => selected === 'all' || normalized(p.category) === selected);
+    status.textContent = products.length ? `目前顯示 ${shown.length} 件商品` : '目前尚無公開商品，歡迎透過 LINE 詢問。';
+    for (const p of shown) {
+      const card = document.createElement('a');
+      card.className = 'catalog-item';
+      const url = String(p.detailUrl || '');
+      card.href = /^https:\/\//i.test(url) ? url : 'https://line.me/R/ti/p/@496plres';
+      card.target = '_blank'; card.rel = 'noopener noreferrer';
+      if (p.image && /^https:\/\//i.test(String(p.image))) {
+        const img = document.createElement('img');
+        img.src = p.image; img.alt = String(p.name || '木藝商品'); img.loading = 'lazy';
+        card.appendChild(img);
+      }
+      const body = document.createElement('div'); body.className = 'catalog-item-content';
+      const name = document.createElement('div'); name.className = 'catalog-item-name'; name.textContent = p.name || '木藝商品';
+      const spec = document.createElement('div'); spec.className = 'catalog-item-spec';
+      spec.textContent = [normalized(p.category), p.spec].filter(Boolean).join('｜');
+      const price = document.createElement('div'); price.className = 'catalog-item-price';
+      const amount = Number(String(p.price || '').replace(/[^0-9.]/g, ''));
+      price.textContent = amount > 0 ? 'NT$ ' + amount.toLocaleString('zh-TW') : '歡迎洽詢';
+      body.append(name, spec, price); card.appendChild(body); grid.appendChild(card);
+    }
+  }
+  tabs.addEventListener('click', e => {
+    const button = e.target.closest('button[data-category]');
+    if (!button) return;
+    selected = button.dataset.category;
+    tabs.querySelectorAll('button').forEach(b => b.classList.toggle('active', b === button));
+    draw();
+  });
+  fetch('./catalog.json', {cache:'no-store'})
+    .then(r => {if (!r.ok) throw Error('HTTP ' + r.status); return r.json();})
+    .then(data => { products = Array.isArray(data) ? data : Array.isArray(data.products) ? data.products : []; draw(); })
+    .catch(() => { status.textContent = '商品目錄尚未完成同步，請透過官方 LINE 洽詢。'; });
+})();
+</script>
 </body>
 </html>
