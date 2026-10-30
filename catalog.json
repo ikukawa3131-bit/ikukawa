@@ -1,6 +1,16 @@
 {
   "products": [
     {
+      "id": "WB-001",
+      "category": "聚寶瓶",
+      "name": "台灣肖楠聚寶盆",
+      "spec": "83才",
+      "price": 415000,
+      "description": "",
+      "image": "https://drive.google.com/thumbnail?id=1DCkCF1cUCTsT8t5IJRVmqS6nVgLk7mz8&sz=w1000",
+      "detailUrl": "https://script.google.com/macros/s/AKfycbyN10EhP0O2YyUcsDtGW1efLhoRFavgPIqql5bQrsty9cdTqct3jjiz4kwRSBPm1Wua/exec?id=WB-001"
+    },
+    {
       "id": "EO-001",
       "category": "精油",
       "name": "台灣扁柏精油",
@@ -31,6 +41,16 @@
       "detailUrl": "https://script.google.com/macros/s/AKfycbyN10EhP0O2YyUcsDtGW1efLhoRFavgPIqql5bQrsty9cdTqct3jjiz4kwRSBPm1Wua/exec?id=WB-002"
     },
     {
+      "id": "WB-003",
+      "category": "聚寶瓶",
+      "name": "台灣檜木聚寶盆",
+      "spec": "台灣檜木/132才",
+      "price": 396000,
+      "description": "",
+      "image": "https://drive.google.com/thumbnail?id=18ur2f-qJqC0qipZeGt3DDla3dBy_6qKv&sz=w1000",
+      "detailUrl": "https://script.google.com/macros/s/AKfycbyN10EhP0O2YyUcsDtGW1efLhoRFavgPIqql5bQrsty9cdTqct3jjiz4kwRSBPm1Wua/exec?id=WB-003"
+    },
+    {
       "id": "ART-002",
       "category": "藝品",
       "name": "台灣檜木金魚",
@@ -51,5 +71,5 @@
       "detailUrl": "https://script.google.com/macros/s/AKfycbyN10EhP0O2YyUcsDtGW1efLhoRFavgPIqql5bQrsty9cdTqct3jjiz4kwRSBPm1Wua/exec?id=WB-004"
     }
   ],
-  "updatedAt": "2026-10-30T08:07:44.786Z"
+  "updatedAt": "2026-10-30T08:11:29.285Z"
 }
