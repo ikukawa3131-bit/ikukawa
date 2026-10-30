@@ -702,6 +702,13 @@ main,.hero,.nav-inner{max-width:1100px}
 .catalog-item-content{padding:14px}.catalog-item-name{font-size:16px;font-weight:600}.catalog-item-spec{font-size:12px;color:var(--text-light);margin:5px 0}.catalog-item-price{font-size:18px;font-weight:600;color:#70513B}
 @media(max-width:720px){.catalog-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.catalog-item img{height:155px}}
 @media(max-width:440px){.catalog-grid{grid-template-columns:1fr}.catalog-item img{height:220px}}
+
+/* 木藝典藏館：直接嵌入可運作的 GAS 公開展示頁 */
+.catalog-embed-wrap{width:100%;min-width:0}
+#ikukawa-catalog-frame{display:block;width:100%;height:1050px;min-height:600px;border:1px solid var(--border);border-radius:16px;background:#fff}
+.catalog-embed-note{text-align:center;font-size:13px;color:var(--text-light);margin-top:12px}
+.catalog-embed-note a{color:#70513B;text-decoration:underline}
+@media(max-width:650px){#ikukawa-catalog-frame{height:1150px;border-radius:10px}}
 </style>
 </head>
 <body>
@@ -772,15 +779,11 @@ main,.hero,.nav-inner{max-width:1100px}
 <section class="home-section zh-only" id="products">
 <h2 class="home-heading">木藝典藏館</h2>
 <p class="home-lead">三義木雕、聚寶盆・聚寶瓶、奇木桌椅與檜木精油。僅展示一久川已勾選「官網展示」的商品。</p>
-<div class="catalog-tabs" id="catalog-tabs" aria-label="商品分類">
-<button type="button" class="catalog-tab active" data-category="all">全部商品</button>
-<button type="button" class="catalog-tab" data-category="藝品">木雕藝品</button>
-<button type="button" class="catalog-tab" data-category="聚寶瓶">聚寶盆・聚寶瓶</button>
-<button type="button" class="catalog-tab" data-category="奇木桌椅">奇木桌椅</button>
-<button type="button" class="catalog-tab" data-category="精油">檜木精油</button>
+<!-- 商品展示直接嵌入 Apps Script 公開典藏館，避免跨網域 JSONP 載入失敗 -->
+<div class="catalog-embed-wrap">
+  <iframe id="ikukawa-catalog-frame" title="一久川木藝典藏館商品目錄" src="https://script.google.com/macros/s/AKfycbyN10EhP0O2YyUcsDtGW1efLhoRFavgPIqql5bQrsty9cdTqct3jjiz4kwRSBPm1Wua/exec?catalogPage=1" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  <p class="catalog-embed-note">如果商品目錄沒有顯示，請<a href="https://script.google.com/macros/s/AKfycbyN10EhP0O2YyUcsDtGW1efLhoRFavgPIqql5bQrsty9cdTqct3jjiz4kwRSBPm1Wua/exec?catalogPage=1" target="_blank" rel="noopener noreferrer">點此開啟完整木藝典藏館</a>。</p>
 </div>
-<p id="catalog-status" class="catalog-status" role="status">商品目錄準備載入中…</p>
-<div id="catalog-grid" class="catalog-grid"></div>
 <div class="home-actions"><a class="wood-btn secondary" href="https://line.me/R/ti/p/@496plres" rel="noopener" target="_blank">LINE 詢問商品與客製服務</a></div>
 </section>
 <section class="home-section zh-only" id="groups">
@@ -1335,49 +1338,6 @@ main,.hero,.nav-inner{max-width:1100px}
 </script>
 <div class="mobile-actions zh-only"><a class="wood-btn" href="#experience">DIY課程預約</a><a class="wood-btn secondary" href="https://line.me/R/ti/p/@496plres" rel="noopener" target="_blank">LINE商品詢價</a></div>
 
-<script>
-/* 一久川公開商品目錄：已設定正式 Apps Script 部署網址。 */
-const IKUKAWA_CATALOG_APP_URL = 'https://script.google.com/macros/s/AKfycbyN10EhP0O2YyUcsDtGW1efLhoRFavgPIqql5bQrsty9cdTqct3jjiz4kwRSBPm1Wua/exec';
-(function(){
-  const grid=document.getElementById('catalog-grid');
-  const status=document.getElementById('catalog-status');
-  const tabs=document.getElementById('catalog-tabs');
-  if(!grid||!status||!tabs)return;
-  let products=[],category='all';
-  const names={'藝品':'木雕藝品','聚寶瓶':'聚寶盆・聚寶瓶','奇木桌椅':'奇木桌椅','精油':'檜木精油'};
-  function render(){
-    grid.replaceChildren();
-    const filtered=products.filter(p=>category==='all'||p.category===category);
-    status.textContent=filtered.length?'目前顯示 '+filtered.length+' 件商品':'此分類目前沒有公開展示商品。';
-    filtered.forEach(p=>{
-      const a=document.createElement('a');a.className='catalog-item';
-      if(typeof p.detailUrl==='string'&&/^https:\/\/script\.google\.com\/macros\/s\//.test(p.detailUrl)){
-        a.href=p.detailUrl;a.target='_blank';a.rel='noopener noreferrer';
-      }else{a.href='https://line.me/R/ti/p/@496plres';a.target='_blank';a.rel='noopener noreferrer';}
-      if(typeof p.image==='string'&&/^https:\/\/drive\.google\.com\/thumbnail\?/.test(p.image)){
-        const img=document.createElement('img');img.src=p.image;img.alt=String(p.name||'商品照片');img.loading='lazy';a.appendChild(img);
-      }
-      const body=document.createElement('div');body.className='catalog-item-content';
-      const n=document.createElement('div');n.className='catalog-item-name';n.textContent=String(p.name||'未命名商品');body.appendChild(n);
-      const spec=document.createElement('div');spec.className='catalog-item-spec';spec.textContent=[names[p.category]||p.category,p.spec||''].filter(Boolean).join('｜');body.appendChild(spec);
-      const price=document.createElement('div');price.className='catalog-item-price';price.textContent='NT$ '+(Number(p.price)||0).toLocaleString('zh-TW');body.appendChild(price);
-      a.appendChild(body);grid.appendChild(a);
-    });
-  }
-  tabs.addEventListener('click',e=>{const b=e.target.closest('button[data-category]');if(!b)return;category=b.dataset.category;tabs.querySelectorAll('button').forEach(x=>x.classList.toggle('active',x===b));render();});
-  if(!/^https:\/\/script\.google\.com\/macros\/s\/[^/]+\/exec(?:\?.*)?$/.test(IKUKAWA_CATALOG_APP_URL)){
-    status.textContent='商品目錄尚未完成連線設定，請先洽詢 LINE。';return;
-  }
-  const cb='ikukawaCatalogCallback_'+Date.now();
-  const script=document.createElement('script');
-  let settled=false;
-  const timer=setTimeout(()=>{if(!settled){settled=true;status.textContent='商品目錄暫時無法載入，請透過 LINE 洽詢。';cleanup();}},12000);
-  function cleanup(){clearTimeout(timer);script.remove();try{delete window[cb]}catch(e){window[cb]=undefined}}
-  window[cb]=function(payload){if(settled)return;settled=true;products=Array.isArray(payload&&payload.products)?payload.products.filter(p=>p&&typeof p==='object'):[];cleanup();render();};
-  script.onerror=function(){if(settled)return;settled=true;status.textContent='商品目錄載入失敗，請透過 LINE 洽詢。';cleanup();};
-  script.src=IKUKAWA_CATALOG_APP_URL+(IKUKAWA_CATALOG_APP_URL.includes('?')?'&':'?')+'catalog=1&callback='+encodeURIComponent(cb);
-  document.head.appendChild(script);
-})();
-</script>
+
 </body>
 </html>
