@@ -794,9 +794,10 @@ main,.hero,.nav-inner{max-width:1100px}
 <div class="catalog-tabs" id="catalog-tabs" aria-label="商品分類">
   <button type="button" class="catalog-tab active" data-category="all">全部商品</button>
   <button type="button" class="catalog-tab" data-category="木雕藝品">木雕藝品</button>
-  <button type="button" class="catalog-tab" data-category="聚寶盆・聚寶瓶">聚寶盆・聚寶瓶</button>
+  <button type="button" class="catalog-tab" data-category="聚寶盆">聚寶盆</button>
   <button type="button" class="catalog-tab" data-category="奇木桌椅">奇木桌椅</button>
   <button type="button" class="catalog-tab" data-category="檜木精油">檜木精油</button>
+  <button type="button" class="catalog-tab" data-category="茶盤">茶盤</button>
 </div>
 <p class="catalog-status" id="catalog-status" role="status">商品資料載入中…</p>
 <div class="catalog-grid" id="catalog-grid"></div>
@@ -1357,13 +1358,6 @@ main,.hero,.nav-inner{max-width:1100px}
 
 
 
-<div class="catalog-detail-modal" id="catalog-detail-modal" hidden role="dialog" aria-modal="true" aria-labelledby="catalog-detail-title">
-  <div class="catalog-detail-panel">
-    <button type="button" id="catalog-detail-close" class="catalog-detail-close" aria-label="關閉商品詳細介紹">×</button>
-    <div id="catalog-detail-content" class="catalog-detail-content"></div>
-  </div>
-</div>
-
 <script>
 /* 商品資料只從本站 catalog.json 載入，不接觸 Google 帳號或管理系統。 */
 (function () {
@@ -1375,8 +1369,8 @@ main,.hero,.nav-inner{max-width:1100px}
   let selected = 'all';
   const categories = {
     '藝品':'木雕藝品','木雕':'木雕藝品','木雕藝品':'木雕藝品',
-    '聚寶瓶':'聚寶盆・聚寶瓶','聚寶盆':'聚寶盆・聚寶瓶','聚寶盆・聚寶瓶':'聚寶盆・聚寶瓶',
-    '奇木桌椅':'奇木桌椅','精油':'檜木精油','檜木精油':'檜木精油'
+    '聚寶瓶':'聚寶盆','聚寶盆':'聚寶盆','聚寶盆・聚寶瓶':'聚寶盆',
+    '奇木桌椅':'奇木桌椅','精油':'檜木精油','檜木精油':'檜木精油','茶盤':'茶盤'
   };
   const normalized = value => categories[String(value || '').trim()] || String(value || '').trim();
   function draw() {
@@ -1418,7 +1412,7 @@ main,.hero,.nav-inner{max-width:1100px}
       img.className = 'catalog-detail-image'; detailContent.appendChild(img);
     }
     const content = document.createElement('div'); content.className = 'catalog-detail-body';
-    const category = document.createElement('p'); category.className = 'catalog-detail-category'; category.textContent = normalized(p.category);
+    const category = document.createElement('p'); category.className = 'catalog-detail-category'; category.textContent = normalized(p.category) + (p.id ? '｜商品編號：' + String(p.id) : '');
     const title = document.createElement('h2'); title.id = 'catalog-detail-title'; title.textContent = p.name || '木藝商品';
     const spec = document.createElement('p'); spec.className = 'catalog-detail-spec'; spec.textContent = p.spec || '';
     const amount = Number(String(p.price || '').replace(/[^0-9.]/g, ''));
@@ -1447,6 +1441,11 @@ main,.hero,.nav-inner{max-width:1100px}
     .catch(() => { status.textContent = '商品目錄尚未完成同步，請透過官方 LINE 洽詢。'; });
 })();
 </script>
-
+<div class="catalog-detail-modal" id="catalog-detail-modal" hidden role="dialog" aria-modal="true" aria-labelledby="catalog-detail-title">
+  <div class="catalog-detail-panel">
+    <button type="button" id="catalog-detail-close" class="catalog-detail-close" aria-label="關閉商品詳細介紹">×</button>
+    <div id="catalog-detail-content" class="catalog-detail-content"></div>
+  </div>
+</div>
 </body>
 </html>
