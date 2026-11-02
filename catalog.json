@@ -109,7 +109,87 @@
       "description": "作者：蔡獻堂\n材質：牛樟木\n尺寸：長 60.5 × 寬 36.5 × 高 33.3 公分\n作品介紹：溫潤牛樟木刻劃福氣神態，細膩紋理流轉自然光澤，為空間增添圓滿喜樂的溫暖氣息。\n\n保養與注意事項：\n避免長時間陽光直射及冷氣出風口直接吹拂，以免木材乾燥、變形或龜裂。日常清潔請使用微濕的柔軟抹布輕輕擦拭，並立即擦乾；切勿使用清潔劑、酒精或其他化學清潔液。",
       "image": "https://drive.google.com/thumbnail?id=1aKcALNgXf_8v_glCFY_ebl7cjT--a9gR&sz=w1000",
       "detailUrl": "https://script.google.com/macros/s/AKfycbyN10EhP0O2YyUcsDtGW1efLhoRFavgPIqql5bQrsty9cdTqct3jjiz4kwRSBPm1Wua/exec?id=ART-006"
+    },
+    {
+      "id": "ART-007",
+      "category": "藝品",
+      "name": "關公老爺斬大刀",
+      "spec": "台灣牛樟/長62/48.5/68",
+      "price": 999999,
+      "description": "作者：蔡獻堂\n材質：牛樟木\n尺寸：長 62 × 寬 48.5 × 高 68 公分\n作品介紹：牛樟木細膩雕琢，展現關公威武神韻，溫潤木色映襯流暢紋理，為空間增添沉穩氣度。\n\n保養與注意事項：\n避免長時間陽光直射及冷氣出風口直接吹拂，以免木材乾燥、變形或龜裂。日常清潔請使用微濕的柔軟抹布輕輕擦拭，並立即擦乾；切勿使用清潔劑、酒精或其他化學清潔液。",
+      "image": "https://drive.google.com/thumbnail?id=1zWSqA3pZuXVh1Orz18pAnnB9n_ZS7rt1&sz=w1000",
+      "detailUrl": "https://script.google.com/macros/s/AKfycbyN10EhP0O2YyUcsDtGW1efLhoRFavgPIqql5bQrsty9cdTqct3jjiz4kwRSBPm1Wua/exec?id=ART-007"
+    },
+    {
+      "id": "ART-008",
+      "category": "藝品",
+      "name": "荷上浮豬",
+      "spec": "台灣牛樟/52/36/25",
+      "price": 999999,
+      "description": "作者：蔡獻堂\n材質：牛樟木\n尺寸：長 52 × 寬 36 × 高 24 公分\n作品介紹：溫潤牛樟木刻畫福氣小豬，悠然佇立於荷葉之上，細膩紋理交織出自然生動的溫暖氣息，為居家空間增添一份恬靜與美好。\n\n保養與注意事項：\n避免長時間陽光直射及冷氣出風口直接吹拂，以免木材乾燥、變形或龜裂。日常清潔請使用微濕的柔軟抹布輕輕擦拭，並立即擦乾；切勿使用清潔劑、酒精或其他化學清潔液。",
+      "image": "https://drive.google.com/thumbnail?id=1ywHUdkMtzBrLpOP4KDprLQmGxxP30fBn&sz=w1000",
+      "detailUrl": "https://script.google.com/macros/s/AKfycbyN10EhP0O2YyUcsDtGW1efLhoRFavgPIqql5bQrsty9cdTqct3jjiz4kwRSBPm1Wua/exec?id=ART-008"
+    },
+    {
+      "id": "ART-009",
+      "category": "藝品",
+      "name": "絲瓜2",
+      "spec": "牛樟/44/21/56",
+      "price": 38000,
+      "description": "作者：蔡承勇\n材質：牛樟木\n尺寸：長 44 × 寬 21 × 高 56 公分\n作品介紹：溫潤牛樟木刻畫絲瓜藤蔓，葉脈細膩生動，展現自然豐盈的生命氣息，為空間增添質樸典雅的藝術風采。\n\n保養與注意事項：\n避免長時間陽光直射及冷氣出風口直接吹拂，以免木材乾燥、變形或龜裂。日常清潔請使用微濕的柔軟抹布輕輕擦拭，並立即擦乾；切勿使用清潔劑、酒精或其他化學清潔液。",
+      "image": "https://drive.google.com/thumbnail?id=1XHNcUY2E53Fy-LE03l9cO86yJJK8eBcj&sz=w1000",
+      "detailUrl": "https://script.google.com/macros/s/AKfycbyN10EhP0O2YyUcsDtGW1efLhoRFavgPIqql5bQrsty9cdTqct3jjiz4kwRSBPm1Wua/exec?id=ART-009"
+    },
+    {
+      "id": "ART-010",
+      "category": "藝品",
+      "name": "檜炙人口系列-融合",
+      "spec": "台灣黃檜",
+      "price": 999999,
+      "description": "作者：楊鴻謀\n材質：台灣檜木\n尺寸：長 60 × 寬 35 × 高 118 公分\n作品介紹：選用台灣檜木，呈現自然木質紋理與溫潤色澤，適合居家陳設與欣賞。\n\n保養與注意事項：\n避免長時間陽光直射及冷氣出風口直接吹拂，以免木材乾燥、變形或龜裂。日常清潔請使用微濕的柔軟抹布輕輕擦拭，並立即擦乾；切勿使用清潔劑、酒精或其他化學清潔液。",
+      "image": "https://drive.google.com/thumbnail?id=15qlhXOgd5DL3PRW9Oqdy---FmPbnWfe0&sz=w1000",
+      "detailUrl": "https://script.google.com/macros/s/AKfycbyN10EhP0O2YyUcsDtGW1efLhoRFavgPIqql5bQrsty9cdTqct3jjiz4kwRSBPm1Wua/exec?id=ART-010"
+    },
+    {
+      "id": "ART-011",
+      "category": "藝品",
+      "name": "福袋雙福豬（黃檜樹瘤）",
+      "spec": "台灣檜木樹瘤",
+      "price": 999999,
+      "description": "作者：黃涬鋐\n材質：台灣檜木\n尺寸：長 64 × 寬 40 × 高 30 公分\n作品介紹：選用台灣檜木細膩雕琢，溫潤色澤映襯生動神韻，福袋伴隨雙豬，為居家空間增添自然質樸的幸福氣息。\n\n保養與注意事項：\n避免長時間陽光直射及冷氣出風口直接吹拂，以免木材乾燥、變形或龜裂。日常清潔請使用微濕的柔軟抹布輕輕擦拭，並立即擦乾；切勿使用清潔劑、酒精或其他化學清潔液。",
+      "image": "https://drive.google.com/thumbnail?id=13fvm1wk3Cj-OlXXEWjB7hAEomj-etEb-&sz=w1000",
+      "detailUrl": "https://script.google.com/macros/s/AKfycbyN10EhP0O2YyUcsDtGW1efLhoRFavgPIqql5bQrsty9cdTqct3jjiz4kwRSBPm1Wua/exec?id=ART-011"
+    },
+    {
+      "id": "ART-012",
+      "category": "藝品",
+      "name": "荷葉賞福豬",
+      "spec": "台灣檜木-黃檜樹瘤",
+      "price": 999999,
+      "description": "作者：黃涬鋐\n材質：台灣檜木\n尺寸：長 65 × 寬 58 × 高 23 公分\n作品介紹：溫潤台灣檜木細膩雕琢，荷葉映襯福豬嬉戲，展現自然溫暖的豐盈韻味，為居家空間增添福氣與雅致。\n\n保養與注意事項：\n避免長時間陽光直射及冷氣出風口直接吹拂，以免木材乾燥、變形或龜裂。日常清潔請使用微濕的柔軟抹布輕輕擦拭，並立即擦乾；切勿使用清潔劑、酒精或其他化學清潔液。",
+      "image": "https://drive.google.com/thumbnail?id=1OFGuDKEz1JqwnZh0zW0siaew200wAgFr&sz=w1000",
+      "detailUrl": "https://script.google.com/macros/s/AKfycbyN10EhP0O2YyUcsDtGW1efLhoRFavgPIqql5bQrsty9cdTqct3jjiz4kwRSBPm1Wua/exec?id=ART-012"
+    },
+    {
+      "id": "WB-005",
+      "category": "聚寶瓶",
+      "name": "台灣檜木聚寶盆",
+      "spec": "黃檜/59才",
+      "price": 206500,
+      "description": "作者：蔡獻堂\n材質：台灣檜木\n尺寸：長 — × 寬 — × 高 — 公分\n作品介紹：選用台灣檜木，呈現自然木質紋理與溫潤色澤，適合居家陳設與欣賞。\n\n保養與注意事項：\n避免長時間陽光直射及冷氣出風口直接吹拂，以免木材乾燥、變形或龜裂。日常清潔請使用微濕的柔軟抹布輕輕擦拭，並立即擦乾；切勿使用清潔劑、酒精或其他化學清潔液。",
+      "image": "https://drive.google.com/thumbnail?id=1jXCpEQKPY-NeleTi7j4SQ8V9fD9w9GN3&sz=w1000",
+      "detailUrl": "https://script.google.com/macros/s/AKfycbyN10EhP0O2YyUcsDtGW1efLhoRFavgPIqql5bQrsty9cdTqct3jjiz4kwRSBPm1Wua/exec?id=WB-005"
+    },
+    {
+      "id": "ART-013",
+      "category": "藝品",
+      "name": "豬踏天珠-福氣多",
+      "spec": "黃金檀",
+      "price": 999999,
+      "description": "作者：蔡獻堂\n材質：黃金檀\n尺寸：長 67 × 寬 38 × 高 41 公分\n作品介紹：呈現自然木質紋理與溫潤色澤，造型雅緻，適合居家陳設與欣賞。\n\n保養與注意事項：\n避免長時間陽光直射及冷氣出風口直接吹拂，以免木材乾燥、變形或龜裂。日常清潔請使用微濕的柔軟抹布輕輕擦拭，並立即擦乾；切勿使用清潔劑、酒精或其他化學清潔液。",
+      "image": "https://drive.google.com/thumbnail?id=19YoFFKXEfWylcce8QSmXbKxeT7933rcO&sz=w1000",
+      "detailUrl": "https://script.google.com/macros/s/AKfycbyN10EhP0O2YyUcsDtGW1efLhoRFavgPIqql5bQrsty9cdTqct3jjiz4kwRSBPm1Wua/exec?id=ART-013"
     }
   ],
-  "updatedAt": "2026-11-02T05:49:52.751Z"
+  "updatedAt": "2026-11-02T06:44:06.242Z"
 }
