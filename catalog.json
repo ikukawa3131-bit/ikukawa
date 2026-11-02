@@ -79,7 +79,17 @@
       "description": "",
       "image": "https://drive.google.com/thumbnail?id=1NzX1KljP5jh5FSdNusuGlWsPsoRkWFUW&sz=w1000",
       "detailUrl": "https://script.google.com/macros/s/AKfycbyN10EhP0O2YyUcsDtGW1efLhoRFavgPIqql5bQrsty9cdTqct3jjiz4kwRSBPm1Wua/exec?id=ART-003"
+    },
+    {
+      "id": "ART-006",
+      "category": "藝品",
+      "name": "福袋豬",
+      "spec": "台灣牛樟/長2尺寬1尺2高1尺1",
+      "price": 9999999,
+      "description": "作者：蔡獻堂\n材質：牛樟木\n尺寸：長 60.5 × 寬 36.5 × 高 33.3 公分\n作品介紹：溫潤牛樟木刻劃福氣神態，細膩紋理流轉自然光澤，為空間增添圓滿喜樂的溫暖氣息。\n\n保養與注意事項：\n避免長時間陽光直射及冷氣出風口直接吹拂，以免木材乾燥、變形或龜裂。日常清潔請使用微濕的柔軟抹布輕輕擦拭，並立即擦乾；切勿使用清潔劑、酒精或其他化學清潔液。",
+      "image": "https://drive.google.com/thumbnail?id=1aKcALNgXf_8v_glCFY_ebl7cjT--a9gR&sz=w1000",
+      "detailUrl": "https://script.google.com/macros/s/AKfycbyN10EhP0O2YyUcsDtGW1efLhoRFavgPIqql5bQrsty9cdTqct3jjiz4kwRSBPm1Wua/exec?id=ART-006"
     }
   ],
-  "updatedAt": "2026-11-02T04:44:05.317Z"
+  "updatedAt": "2026-11-02T05:44:06.004Z"
 }
