@@ -2,7 +2,7 @@
   "products": [
     {
       "id": "WB-001",
-      "category": "聚寶瓶",
+      "category": "聚寶盆",
       "name": "台灣肖楠聚寶盆",
       "spec": "83才",
       "price": 415000,
@@ -32,7 +32,7 @@
     },
     {
       "id": "WB-002",
-      "category": "聚寶瓶",
+      "category": "聚寶盆",
       "name": "台灣檜木聚寶盆",
       "spec": "台灣檜木/116才",
       "price": 464000,
@@ -42,7 +42,7 @@
     },
     {
       "id": "WB-003",
-      "category": "聚寶瓶",
+      "category": "聚寶盆",
       "name": "台灣檜木聚寶盆",
       "spec": "台灣檜木/132才",
       "price": 396000,
@@ -62,7 +62,7 @@
     },
     {
       "id": "WB-004",
-      "category": "聚寶瓶",
+      "category": "聚寶盆",
       "name": "台灣檜木聚寶盆",
       "spec": "台灣黃檜/84才",
       "price": 336000,
@@ -172,7 +172,7 @@
     },
     {
       "id": "WB-005",
-      "category": "聚寶瓶",
+      "category": "聚寶盆",
       "name": "台灣檜木聚寶盆",
       "spec": "黃檜/59才",
       "price": 206500,
@@ -202,7 +202,7 @@
     },
     {
       "id": "WB-006",
-      "category": "聚寶瓶",
+      "category": "聚寶盆",
       "name": "紅檜聚寶盆",
       "spec": "紅檜/45才",
       "price": 135000,
@@ -251,5 +251,5 @@
       "detailUrl": "https://script.google.com/macros/s/AKfycbyN10EhP0O2YyUcsDtGW1efLhoRFavgPIqql5bQrsty9cdTqct3jjiz4kwRSBPm1Wua/exec?id=ART-016"
     }
   ],
-  "updatedAt": "2026-11-02T07:44:06.354Z"
+  "updatedAt": "2026-11-02T08:44:14.714Z"
 }
