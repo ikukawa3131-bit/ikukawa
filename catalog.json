@@ -81,6 +81,26 @@
       "detailUrl": "https://script.google.com/macros/s/AKfycbyN10EhP0O2YyUcsDtGW1efLhoRFavgPIqql5bQrsty9cdTqct3jjiz4kwRSBPm1Wua/exec?id=ART-003"
     },
     {
+      "id": "ART-004",
+      "category": "藝品",
+      "name": "福袋彌勒佛（坐姿）",
+      "spec": "台灣檜木/長2尺2寬1尺3高1尺8",
+      "price": 38000,
+      "description": "",
+      "image": "https://drive.google.com/thumbnail?id=1l87cZah2KDyzdLLlfVDBn9q-gw8Ksi2L&sz=w1000",
+      "detailUrl": "https://script.google.com/macros/s/AKfycbyN10EhP0O2YyUcsDtGW1efLhoRFavgPIqql5bQrsty9cdTqct3jjiz4kwRSBPm1Wua/exec?id=ART-004"
+    },
+    {
+      "id": "ART-005",
+      "category": "藝品",
+      "name": "絲瓜",
+      "spec": "台灣牛樟/",
+      "price": 38000,
+      "description": "作者：蔡承勇\n材質：牛樟木\n尺寸：長 — × 寬 — × 高 — 公分\n作品介紹：牛樟木溫潤色澤映襯絲瓜生機，細膩紋理刻畫自然田園意趣，為居家空間增添質樸優雅氣息。\n\n保養與注意事項：\n避免長時間陽光直射及冷氣出風口直接吹拂，以免木材乾燥、變形或龜裂。日常清潔請使用微濕的柔軟抹布輕輕擦拭，並立即擦乾；切勿使用清潔劑、酒精或其他化學清潔液。",
+      "image": "https://drive.google.com/thumbnail?id=1BuiK_8X95PygH0plYasYxHYGwlGGojSY&sz=w1000",
+      "detailUrl": "https://script.google.com/macros/s/AKfycbyN10EhP0O2YyUcsDtGW1efLhoRFavgPIqql5bQrsty9cdTqct3jjiz4kwRSBPm1Wua/exec?id=ART-005"
+    },
+    {
       "id": "ART-006",
       "category": "藝品",
       "name": "福袋豬",
@@ -91,5 +111,5 @@
       "detailUrl": "https://script.google.com/macros/s/AKfycbyN10EhP0O2YyUcsDtGW1efLhoRFavgPIqql5bQrsty9cdTqct3jjiz4kwRSBPm1Wua/exec?id=ART-006"
     }
   ],
-  "updatedAt": "2026-11-02T05:44:06.004Z"
+  "updatedAt": "2026-11-02T05:49:52.751Z"
 }
